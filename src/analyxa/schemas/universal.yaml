@@ -1,0 +1,153 @@
+metadata:
+  name: universal
+  version: "1.0"
+  description: "Universal schema — 10 base fields for any conversation type"
+  inherits: null
+
+fields:
+  - name: title
+    type: string
+    required: true
+    description: "Short descriptive name of the session"
+    prompt_hint: >
+      Nombre descriptivo de la sesión en 5-8 palabras. Captura el tema principal y resultado.
+    allowed_values: null
+
+  - name: summary
+    type: string
+    required: true
+    description: "3-5 sentence summary of the conversation"
+    prompt_hint: >
+      Resumen de 3-5 oraciones cubriendo: qué pidió el usuario, qué hizo el agente, resultado final.
+      Este campo se vectoriza para búsqueda semántica, incluir detalles relevantes.
+    allowed_values: null
+
+  - name: sentiment
+    type: keyword
+    required: true
+    description: "Predominant user sentiment throughout the conversation"
+    prompt_hint: >
+      Sentimiento predominante del USUARIO (no del agente) a lo largo de toda la conversación.
+    allowed_values:
+      - positive
+      - negative
+      - mixed
+      - neutral
+
+  - name: sentiment_intensity
+    type: keyword
+    required: true
+    description: "Intensity of the sentiment expressed"
+    prompt_hint: >
+      Qué tan fuerte se manifiesta el sentimiento. Low = sutil/implícito, medium = claro,
+      high = explícito/emocional.
+    allowed_values:
+      - low
+      - medium
+      - high
+
+  - name: topics
+    type: keyword_array
+    required: true
+    description: "List of 1-5 specific topics discussed"
+    prompt_hint: >
+      Lista de 1-5 temas específicos discutidos. Usar términos concretos (ej: "billing", "refund"),
+      NO genéricos (ej: "problema", "consulta").
+    allowed_values: null
+
+  - name: session_outcome
+    type: keyword
+    required: true
+    description: "Final outcome of the session"
+    prompt_hint: >
+      Resultado final de la sesión. Resolved = el usuario obtuvo lo que necesitaba.
+      Abandoned = el usuario dejó la conversación sin conclusión.
+    allowed_values:
+      - resolved
+      - unresolved
+      - escalated
+      - abandoned
+
+  - name: user_intent
+    type: string
+    required: true
+    description: "What the user was really looking for"
+    prompt_hint: >
+      En 1-2 oraciones, qué buscaba realmente el usuario. Distinguir entre lo que pidió
+      explícitamente y lo que realmente necesitaba.
+    allowed_values: null
+
+  - name: risk_signals
+    type: keyword_array
+    required: false
+    description: "Detected risk signals in the conversation"
+    prompt_hint: >
+      Señales de riesgo detectadas. Lista vacía si no hay señales.
+      Solo incluir señales con evidencia clara en el texto.
+    allowed_values:
+      - frustration
+      - churn_risk
+      - complaint
+      - urgency
+      - confusion
+      - escalation_request
+      - negative_experience
+      - repeat_contact
+
+  - name: key_entities
+    type: keyword_array
+    required: false
+    description: "People, products, services, dates, amounts explicitly mentioned"
+    prompt_hint: >
+      Personas, productos, servicios, fechas, montos mencionados explícitamente.
+      No inferir — solo extraer lo que aparece en el texto.
+    allowed_values: null
+
+  - name: action_items
+    type: string_array
+    required: false
+    description: "Explicit commitments or next steps mentioned"
+    prompt_hint: >
+      Compromisos explícitos o siguientes pasos mencionados. Cada ítem debe ser accionable
+      y específico. Lista vacía si no hay.
+    allowed_values: null
+
+auto_fields:
+  - name: schema_name
+    source: config
+    description: "Name of the schema used for analysis"
+  - name: schema_version
+    source: config
+    description: "Version of the schema used"
+  - name: analyzed_at
+    source: timestamp
+    description: "ISO 8601 timestamp of analysis"
+  - name: analysis_model
+    source: config
+    description: "LLM model used for extraction"
+  - name: embedding_model
+    source: config
+    description: "Embedding model used for vectorization"
+  - name: session_length
+    source: computed
+    description: "Number of messages in the conversation"
+  - name: conversation_hash
+    source: computed
+    description: "SHA-256 hash (first 16 chars) for deduplication"
+
+prompt:
+  system_context: >
+    You are a conversation analysis engine. Your task is to extract structured
+    information from conversations between users and AI agents. Be precise,
+    evidence-based, and avoid speculation. Extract only what is clearly present
+    or strongly implied in the conversation text.
+  output_format: >
+    Respond with a single valid JSON object. No markdown, no code fences,
+    no explanatory text. Every required field must be present. Optional fields
+    should be included only if there is clear evidence in the conversation.
+  analysis_guidelines:
+    - Focus on the USER's experience, not the agent's responses
+    - Sentiment reflects the user's emotional state, not the conversation topic
+    - Topics must be specific and actionable, not generic labels
+    - Risk signals require evidence — do not infer from absence of positivity
+    - Entity extraction is literal — only extract what appears in the text

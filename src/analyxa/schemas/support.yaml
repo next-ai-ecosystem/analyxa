@@ -1,0 +1,81 @@
+metadata:
+  name: support
+  version: "1.0"
+  description: "Customer support schema — extends universal with 6 support-specific fields"
+  inherits: universal
+
+fields:
+  - name: satisfaction_prediction
+    type: keyword
+    required: true
+    description: "Predicted customer satisfaction based on tone, resolution, and effort"
+    prompt_hint: >
+      Predicción de satisfacción del cliente basada en el tono, resolución y esfuerzo requerido.
+    allowed_values:
+      - very_satisfied
+      - satisfied
+      - neutral
+      - dissatisfied
+      - very_dissatisfied
+
+  - name: issue_category
+    type: keyword
+    required: true
+    description: "Main category of the support issue"
+    prompt_hint: >
+      Categoría principal del problema. Elegir la más específica que aplique.
+    allowed_values:
+      - billing
+      - technical
+      - account
+      - product_inquiry
+      - feature_request
+      - bug_report
+      - complaint
+      - onboarding
+      - cancellation
+      - other
+
+  - name: escalation_needed
+    type: boolean
+    required: true
+    description: "Whether the case requires human intervention"
+    prompt_hint: >
+      ¿El caso requiere intervención humana? True si el agente no pudo resolver, si el cliente
+      lo pidió, o si la complejidad lo requiere.
+    allowed_values: null
+
+  - name: resolution_quality
+    type: keyword
+    required: true
+    description: "Quality of the resolution provided"
+    prompt_hint: >
+      Calidad de la resolución. Excellent = resuelto rápido y bien. Failed = no se resolvió.
+    allowed_values:
+      - excellent
+      - good
+      - adequate
+      - poor
+      - failed
+
+  - name: first_contact_resolution
+    type: boolean
+    required: true
+    description: "Whether the issue was resolved in this conversation without follow-up"
+    prompt_hint: >
+      ¿Se resolvió el problema en esta misma conversación sin necesidad de seguimiento?
+    allowed_values: null
+
+  - name: customer_effort_score
+    type: keyword
+    required: true
+    description: "How much effort the customer had to put in to resolve their issue"
+    prompt_hint: >
+      Cuánto esfuerzo tuvo que hacer el cliente para resolver su problema.
+      Very_low = fácil y rápido. Very_high = múltiples intentos, frustración.
+    allowed_values:
+      - very_low
+      - low
+      - medium
+      - high
+      - very_high
