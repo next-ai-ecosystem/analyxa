@@ -9,8 +9,8 @@
 
 | Fase | Descripción | Estimado | Estado |
 |------|-------------|----------|--------|
-| Fase 0: Inicialización | Setup proyecto y servidor | 1 sesión | 🔄 En progreso |
-| Fase 1: Motor Core | Schema, prompt, LLM, analyzer | Días 1-14 | Pendiente |
+| Fase 0: Inicialización | Setup proyecto y servidor | 1 sesión | ✅ Completa |
+| Fase 1: Motor Core | Schema, prompt, LLM, analyzer | Días 1-14 | ✅ Completa |
 | Fase 2: CLI + Integraciones | CLI, Redis, Qdrant, batch, schemas | Días 8-20 | Pendiente |
 | Fase 3: Open Source Launch | README, PyPI, GitHub, docs | Días 15-25 | Pendiente |
 | Fase 1.5: Primeros Ingresos | Fiverr, landing, primer cliente | Días 20-30 | Pendiente |
@@ -26,8 +26,8 @@
 - [x] Proyecto Claude creado con system prompt MEMORIA v3.0
 - [x] 5 artefactos de memoria creados
 - [x] Knowledge base cargado
-- [ ] VPS: workspace /opt/analyxa creado
-- [ ] VPS: Python venv + Git inicializado
+- [x] VPS: workspace /opt/analyxa creado
+- [x] VPS: Python venv + Git inicializado
 - [ ] VPS: Docker (Redis + Qdrant) verificado
 - [ ] VPS: Claude Code funcional
 - [ ] VPS: .env con API keys configuradas
@@ -37,29 +37,29 @@
 ## Fase 1 — Motor Core
 
 ### Paso 1.1 — Schema System
-- [ ] Diseñar formato YAML del schema (4 secciones: metadata, fields, auto_fields, prompt)
-- [ ] Implementar schema.py (SchemaManager, herencia, validación, cache)
-- [ ] Crear schemas/universal.yaml (10 campos + 7 auto-campos)
-- [ ] Crear schemas/support.yaml (hereda universal + 6 campos)
-- [ ] Tests de carga, herencia, validación
+- [x] Diseñar formato YAML del schema (4 secciones: metadata, fields, auto_fields, prompt)
+- [x] Implementar schema.py (SchemaManager, herencia, validación, cache)
+- [x] Crear schemas/universal.yaml (10 campos + 7 auto-campos)
+- [x] Crear schemas/support.yaml (hereda universal + 6 campos)
+- [x] Tests de carga, herencia, validación
 
 ### Paso 1.2 — Prompt Generator
-- [ ] Implementar prompt_builder.py
-- [ ] build_prompt(schema, conversation, context) → {system, user}
-- [ ] Tests de prompt_builder
+- [x] Implementar prompt_builder.py
+- [x] build_prompt(schema, conversation, context) → {system, user}
+- [x] Tests de prompt_builder
 
 ### Paso 1.3 — LLM Client
-- [ ] Implementar llm_client.py (Anthropic + OpenAI)
-- [ ] LLMResponse dataclass, parser JSON robusto
-- [ ] Tests unitarios + integración
+- [x] Implementar llm_client.py (Anthropic + OpenAI)
+- [x] LLMResponse dataclass, parser JSON robusto
+- [x] Tests unitarios + integración
 
 ### Paso 1.4 — Analyzer Pipeline
-- [ ] Implementar analyzer.py (orquestador completo)
-- [ ] Implementar embeddings.py (vectores 1536D)
-- [ ] Implementar sources/file_source.py
-- [ ] Implementar sinks/json_sink.py + stdout_sink.py
-- [ ] `from analyxa import analyze` funcional
-- [ ] Tests end-to-end
+- [x] Implementar analyzer.py (orquestador completo)
+- [x] Implementar embeddings.py (vectores 1536D)
+- [x] Implementar sources/file_source.py
+- [x] Implementar sinks/json_sink.py + stdout_sink.py
+- [x] `from analyxa import analyze` funcional
+- [x] Tests end-to-end
 
 ---
 
