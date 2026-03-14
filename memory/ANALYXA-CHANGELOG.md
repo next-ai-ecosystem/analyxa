@@ -385,3 +385,26 @@
 ### Siguiente acción
 - Javier: publicar gig en Fiverr, configurar DNS analyxa.ai, PyPI token, API keys
 - IF-010: completar publicación PyPI + Ishara dogfooding
+
+---
+## 2026-03-14 — Sesión 9 (continuación): PyPI + Dogfooding
+
+**Tipo:** Publicación + Validación
+
+### Cambios ejecutados
+1. **API keys configuradas** — Anthropic + OpenAI en .env, verificadas con analyxa version
+2. **PyPI v0.1.0 publicado** — https://pypi.org/project/analyxa/0.1.0/
+   - Wheel + sdist subidos con twine
+   - `pip install analyxa==0.1.0` verificado en VPS
+3. **dogfood.py fix** — Corregido para usar get_config() en vez de verificación directa de .env
+4. **Dogfooding REAL ejecutado** — 14/14 análisis passed (100%)
+   - 0 quality issues en 4 schemas
+   - Resultados en examples/results/dogfood_report.json
+
+### HITO: Fase 3 — Open Source Launch COMPLETA
+GitHub ✅ + PyPI ✅ + dogfooding validado ✅
+
+### Pendientes de Javier (no bloquean fabricación)
+- DNS analyxa.ai → 66.94.117.83
+- Certbot HTTPS
+- Publicar gig en Fiverr

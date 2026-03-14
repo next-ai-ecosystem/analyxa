@@ -21,6 +21,7 @@ ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 
 from analyxa import analyze
+from analyxa.config import get_config
 
 
 CONVERSATIONS_DIR = ROOT / "examples" / "conversations"
@@ -205,8 +206,8 @@ def run_analysis(entry: dict) -> dict:
 
 def check_api_key() -> bool:
     """Returns True if ANTHROPIC_API_KEY looks valid (not a placeholder)."""
-    import os
-    key = os.environ.get("ANTHROPIC_API_KEY", "")
+    config = get_config(env_file=str(ROOT / ".env"))
+    key = config.anthropic_api_key or ""
     return bool(key) and "CHANGE_ME" not in key and len(key) > 20
 
 

@@ -1,5 +1,673 @@
 {
-    "status": "pending",
-    "message": "API keys not configured. Set ANTHROPIC_API_KEY in .env and re-run scripts/dogfood.py",
-    "planned_analyses": 14
+  "timestamp": "2026-03-14T11:22:52.198047",
+  "total": 14,
+  "passed": 14,
+  "failed": 0,
+  "quality_failures": 0,
+  "success_rate": 100.0,
+  "results": [
+    {
+      "id": "A01",
+      "label": "Universal greeting — schema universal",
+      "schema": "universal",
+      "file": "universal_greeting.txt",
+      "success": true,
+      "elapsed_seconds": 4.43,
+      "quality_issues": [],
+      "quality_ok": true,
+      "fields": {
+        "title": "Platform Analytics Information Request",
+        "summary": "User inquired about platform analytics capabilities and requested documentation. Agent explained the AI-powered conversation analytics features and successfully sent documentation to the user's email address. The interaction concluded positively with the user's information needs met.",
+        "sentiment": "positive",
+        "sentiment_intensity": "low",
+        "topics": [
+          "analytics",
+          "documentation",
+          "platform_features"
+        ],
+        "session_outcome": "resolved",
+        "user_intent": "The user wanted to learn about the platform's analytics capabilities and obtain documentation to evaluate the service.",
+        "risk_signals": [],
+        "key_entities": [
+          "john@example.com",
+          "quickstart guide",
+          "API documentation"
+        ],
+        "action_items": [
+          "Send documentation to john@example.com"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "A02",
+      "label": "Universal technical — schema universal",
+      "schema": "universal",
+      "file": "universal_technical.txt",
+      "success": true,
+      "elapsed_seconds": 5.0,
+      "quality_issues": [],
+      "quality_ok": true,
+      "fields": {
+        "title": "API Authentication Error Resolution",
+        "summary": "User encountered a 401 authentication error when connecting to the API. Agent guided troubleshooting process, helping user identify they were using a test API key in production environment instead of the production key. Issue was quickly resolved by switching to the correct production key, and user expressed satisfaction with the quick resolution.",
+        "sentiment": "positive",
+        "sentiment_intensity": "medium",
+        "topics": [
+          "api_authentication",
+          "error_troubleshooting",
+          "api_keys"
+        ],
+        "session_outcome": "resolved",
+        "user_intent": "Resolve API connection authentication error to get their application working properly",
+        "risk_signals": [],
+        "key_entities": [
+          "401 error",
+          "API key",
+          "Authorization header",
+          "test key",
+          "production key",
+          "sandbox environment"
+        ],
+        "action_items": []
+      },
+      "error": null
+    },
+    {
+      "id": "A03",
+      "label": "Support billing — schema support",
+      "schema": "support",
+      "file": "support_billing.txt",
+      "success": true,
+      "elapsed_seconds": 8.52,
+      "quality_issues": [],
+      "quality_ok": true,
+      "fields": {
+        "title": "Duplicate Billing Charges - Refund Processing",
+        "summary": "Sarah reported being charged twice ($49.99) for her Pro subscription in March, which was the second occurrence in three months. The agent identified both the current duplicate charge and a previous unprocessed refund from January. Both refunds totaling $99.98 were processed, the case was escalated to billing team lead, and duplicate charge prevention measures were implemented.",
+        "sentiment": "negative",
+        "sentiment_intensity": "medium",
+        "topics": [
+          "duplicate_billing",
+          "refund_processing",
+          "subscription_charges",
+          "account_review"
+        ],
+        "session_outcome": "resolved",
+        "user_intent": "Get refund for duplicate charges and prevent future billing issues",
+        "risk_signals": [
+          "frustration",
+          "repeat_contact"
+        ],
+        "key_entities": [
+          "sarah@company.com",
+          "$49.99",
+          "Pro subscription",
+          "March 3rd",
+          "March 5th",
+          "January",
+          "$99.98",
+          "3-5 business days",
+          "24 hours"
+        ],
+        "action_items": [
+          "Process refund for March duplicate charge ($49.99)",
+          "Process refund for January duplicate charge ($49.99)",
+          "Billing team lead to review account within 24 hours",
+          "Send confirmation email once refunds are processed"
+        ],
+        "satisfaction_prediction": "satisfied",
+        "issue_category": "billing",
+        "escalation_needed": true,
+        "resolution_quality": "good",
+        "first_contact_resolution": true,
+        "customer_effort_score": "low"
+      },
+      "error": null
+    },
+    {
+      "id": "A04",
+      "label": "Support cancellation — schema support",
+      "schema": "support",
+      "file": "support_cancellation.txt",
+      "success": true,
+      "elapsed_seconds": 6.76,
+      "quality_issues": [],
+      "quality_ok": true,
+      "fields": {
+        "title": "Subscription Cancellation Prevented with API Workaround",
+        "summary": "User wanted to cancel subscription due to missing CSV export feature that was promised but not delivered after 3 months. Agent offered 50% discount and API workaround solution. User accepted both offers and agreed to stay, with agent committing to follow up when the feature launches in two weeks.",
+        "sentiment": "mixed",
+        "sentiment_intensity": "medium",
+        "topics": [
+          "subscription_cancellation",
+          "csv_exports",
+          "api_workaround",
+          "discount_offer",
+          "feature_delivery"
+        ],
+        "session_outcome": "resolved",
+        "user_intent": "User wanted to cancel subscription due to frustration with missing CSV export functionality that was impacting their weekly reporting workflow.",
+        "risk_signals": [
+          "churn_risk",
+          "frustration"
+        ],
+        "key_entities": [
+          "3 months",
+          "CSV exports",
+          "two weeks",
+          "50% discount",
+          "2 billing cycles",
+          "/reports endpoint"
+        ],
+        "action_items": [
+          "Send API guide to user's email",
+          "Apply 50% discount for next 2 billing cycles",
+          "Follow up when CSV exports launch"
+        ],
+        "satisfaction_prediction": "satisfied",
+        "issue_category": "feature_request",
+        "escalation_needed": false,
+        "resolution_quality": "good",
+        "first_contact_resolution": true,
+        "customer_effort_score": "low"
+      },
+      "error": null
+    },
+    {
+      "id": "A05",
+      "label": "Sales demo — schema sales",
+      "schema": "sales",
+      "file": "sales_demo.txt",
+      "success": true,
+      "elapsed_seconds": 8.88,
+      "quality_issues": [],
+      "quality_ok": true,
+      "fields": {
+        "title": "SaaS Analytics Platform Trial Setup",
+        "summary": "User discovered the platform at a SaaS conference and needs analytics for 15,000 monthly AI agent conversations across support channels. They evaluated Qualtrics (too expensive) and in-house development (no capacity). Agent positioned Pro plan at $49/month, well within their $200 budget. Trial setup arranged with 2-week timeline to support VP's March board presentation.",
+        "sentiment": "positive",
+        "sentiment_intensity": "medium",
+        "topics": [
+          "ai_conversation_analytics",
+          "trial_setup",
+          "pricing",
+          "competitive_evaluation",
+          "implementation_timeline"
+        ],
+        "session_outcome": "resolved",
+        "user_intent": "The user needed an analytics solution to gain visibility into their AI agent conversations and provide data for an upcoming board presentation, requiring quick deployment within budget constraints.",
+        "risk_signals": [],
+        "key_entities": [
+          "SaaS conference",
+          "Zendesk",
+          "15,000 conversations",
+          "Qualtrics",
+          "Pro plan",
+          "$49/month",
+          "$200/month budget",
+          "mike@acmecorp.com",
+          "March board presentation",
+          "VP of Customer Success"
+        ],
+        "action_items": [
+          "Send trial setup instructions to mike@acmecorp.com today",
+          "Check in after first week to review analysis results"
+        ],
+        "buying_stage": "decision",
+        "objections": [],
+        "budget_signals": [
+          "has_budget"
+        ],
+        "decision_urgency": "short_term",
+        "competitive_mentions": [
+          "Qualtrics",
+          "in-house"
+        ],
+        "next_best_action": "Send comprehensive trial setup instructions to mike@acmecorp.com today and schedule week 1 check-in to ensure successful onboarding and data analysis"
+      },
+      "error": null
+    },
+    {
+      "id": "A06",
+      "label": "Sales objection — schema sales",
+      "schema": "sales",
+      "file": "sales_objection.txt",
+      "success": true,
+      "elapsed_seconds": 10.19,
+      "quality_issues": [],
+      "quality_ok": true,
+      "fields": {
+        "title": "AI Analytics Pilot for Customer Service Team",
+        "summary": "User evaluates AI-powered conversation analytics for their startup's customer service team handling 2,000 weekly conversations. Initially skeptical about ROI and accuracy, they express budget concerns as a startup. After learning about $49/month pricing and 85-90% accuracy rates, and comparing with Gong, they agree to run a pilot with 100 conversations. User will discuss with CTO before proceeding next week.",
+        "sentiment": "mixed",
+        "sentiment_intensity": "medium",
+        "topics": [
+          "conversation_analytics",
+          "pricing",
+          "accuracy",
+          "pilot_program",
+          "competitive_comparison"
+        ],
+        "session_outcome": "resolved",
+        "user_intent": "The user wanted to evaluate whether AI-powered conversation analytics would provide sufficient value to justify the investment for their startup's customer service operations.",
+        "risk_signals": [
+          "churn_risk"
+        ],
+        "key_entities": [
+          "2000 conversations per week",
+          "50-100 manual reviews",
+          "$49/month",
+          "Pro plan",
+          "5000 conversations",
+          "85-90% accuracy",
+          "100 conversations pilot",
+          "Intercom",
+          "Slack",
+          "Gong",
+          "CTO"
+        ],
+        "action_items": [
+          "Set up free trial for 100 conversations analysis",
+          "User to discuss with CTO before proceeding",
+          "Start pilot program next week"
+        ],
+        "buying_stage": "consideration",
+        "objections": [
+          "Not sure AI-powered analytics is worth the investment compared to manual review",
+          "Budget constraints as a startup with multiple tool subscriptions",
+          "Concerns about AI accuracy based on past disappointing experiences"
+        ],
+        "budget_signals": [
+          "price_sensitive",
+          "comparing_options"
+        ],
+        "decision_urgency": "short_term",
+        "competitive_mentions": [
+          "Gong"
+        ],
+        "next_best_action": "Set up the free 100-conversation pilot immediately and follow up after user discusses with CTO to ensure pilot starts next week as planned"
+      },
+      "error": null
+    },
+    {
+      "id": "A07",
+      "label": "Coaching progress — schema coaching",
+      "schema": "coaching",
+      "file": "coaching_progress.txt",
+      "success": true,
+      "elapsed_seconds": 8.82,
+      "quality_issues": [],
+      "quality_ok": true,
+      "fields": {
+        "title": "Thesis Anxiety Progress and Sleep Improvement",
+        "summary": "User reports significant improvement in sleep and anxiety management using breathing techniques learned in previous session. They successfully tackled thesis avoidance, started working on methodology chapter after two months, and recognized their catastrophizing patterns. Anxiety levels decreased from 8/10 to 5/10, and they're planning to present to study group next week.",
+        "sentiment": "positive",
+        "sentiment_intensity": "medium",
+        "topics": [
+          "thesis_defense_anxiety",
+          "sleep_improvement",
+          "breathing_techniques",
+          "academic_avoidance",
+          "catastrophizing"
+        ],
+        "session_outcome": "resolved",
+        "user_intent": "The user wanted to share positive progress from the previous week and discuss how their improved sleep and anxiety management helped them tackle previously avoided academic work.",
+        "risk_signals": [],
+        "key_entities": [
+          "thesis defense",
+          "methodology chapter",
+          "breathing technique",
+          "study group",
+          "advisor"
+        ],
+        "action_items": [
+          "Continue working on thesis",
+          "Present draft section to study group",
+          "Check in next week on study group presentation"
+        ],
+        "emotional_valence": "positive",
+        "emotional_intensity": "moderate",
+        "progress_indicators": [
+          "Slept through the night three times this week using breathing technique",
+          "Started working on thesis methodology chapter after avoiding it for two months",
+          "Anxiety decreased from 8/10 to 5/10"
+        ],
+        "behavioral_patterns": [
+          "engagement",
+          "openness",
+          "growth_mindset"
+        ],
+        "growth_markers": [
+          "I realized I was catastrophizing — like, my thesis doesn't have to be perfect to pass",
+          "I guess I've been harder on myself than I need to be"
+        ],
+        "therapeutic_momentum": "accelerating",
+        "adaptation_level": "coping",
+        "coping_strategies": [
+          "emotional_regulation",
+          "cognitive_reframing",
+          "problem_solving"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "A08",
+      "label": "Coaching crisis — schema coaching",
+      "schema": "coaching",
+      "file": "coaching_crisis.txt",
+      "success": true,
+      "elapsed_seconds": 8.84,
+      "quality_issues": [],
+      "quality_ok": true,
+      "fields": {
+        "title": "Reframing Core Beliefs About Emotional Expression",
+        "summary": "User presented feeling discouraged and regressive after a conflict with roommate who called them 'too negative.' User had been isolating, skipping classes and meals, and felt like a failure for not maintaining journaling practice. Agent helped user recognize pattern of internalizing others' discomfort with emotions as personal defect. Session resulted in new insight that emotions aren't the problem and commitment to reframe core belief 'I'm too much' with cognitive technique.",
+        "sentiment": "mixed",
+        "sentiment_intensity": "medium",
+        "topics": [
+          "roommate_conflict",
+          "emotional_regulation",
+          "core_beliefs",
+          "isolation_behaviors",
+          "cognitive_reframing"
+        ],
+        "session_outcome": "resolved",
+        "user_intent": "The user was seeking help for feeling stuck and regressive, ultimately needing to address deep-seated beliefs about their emotional nature being problematic.",
+        "risk_signals": [
+          "negative_experience",
+          "confusion"
+        ],
+        "key_entities": [
+          "roommate",
+          "Tuesday",
+          "parents",
+          "journaling",
+          "classes"
+        ],
+        "action_items": [
+          "When noticing the thought 'I'm too much,' pause and ask 'according to whom?'",
+          "Continue working on reframing core belief about being 'too much'"
+        ],
+        "emotional_valence": "negative",
+        "emotional_intensity": "moderate",
+        "progress_indicators": [],
+        "behavioral_patterns": [
+          "avoidance",
+          "isolation",
+          "self_blame",
+          "openness"
+        ],
+        "growth_markers": [
+          "I never thought about it that way. I just always assumed they were right and I was broken"
+        ],
+        "therapeutic_momentum": "accelerating",
+        "adaptation_level": "struggling",
+        "coping_strategies": [
+          "avoidance",
+          "cognitive_reframing"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "A09",
+      "label": "Support billing — schema universal (cross)",
+      "schema": "universal",
+      "file": "support_billing.txt",
+      "success": true,
+      "elapsed_seconds": 5.73,
+      "quality_issues": [],
+      "quality_ok": true,
+      "fields": {
+        "title": "Duplicate Pro Subscription Billing Issue Resolution",
+        "summary": "User reported being charged twice ($49.99) for Pro subscription in March, which was the second occurrence in three months. Agent discovered an unprocessed refund from January and processed both refunds totaling $99.98. Agent escalated to billing team lead and implemented duplicate charge prevention measures.",
+        "sentiment": "mixed",
+        "sentiment_intensity": "medium",
+        "topics": [
+          "duplicate_billing",
+          "refund_processing",
+          "subscription_charges",
+          "billing_prevention"
+        ],
+        "session_outcome": "resolved",
+        "user_intent": "Get refund for duplicate charges and prevent future billing issues",
+        "risk_signals": [
+          "frustration",
+          "repeat_contact"
+        ],
+        "key_entities": [
+          "sarah@company.com",
+          "$49.99",
+          "Pro subscription",
+          "March 3rd",
+          "March 5th",
+          "January",
+          "$99.98",
+          "3-5 business days",
+          "24 hours"
+        ],
+        "action_items": [
+          "Process refund for March duplicate charge ($49.99)",
+          "Process refund for January duplicate charge ($49.99)",
+          "Billing team lead to review account within 24 hours",
+          "Send confirmation email once refunds are processed"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "A10",
+      "label": "Support cancellation — schema universal (cross)",
+      "schema": "universal",
+      "file": "support_cancellation.txt",
+      "success": true,
+      "elapsed_seconds": 6.31,
+      "quality_issues": [],
+      "quality_ok": true,
+      "fields": {
+        "title": "Subscription Cancellation Prevented with CSV Export Solution",
+        "summary": "User wanted to cancel subscription due to missing CSV export feature in reporting, which they needed for weekly management reports. Agent offered API workaround and 50% discount for 2 months while feature is developed. User accepted the solution and decided to stay with the service.",
+        "sentiment": "mixed",
+        "sentiment_intensity": "medium",
+        "topics": [
+          "subscription_cancellation",
+          "csv_exports",
+          "reporting_features",
+          "api_workaround",
+          "billing_discount"
+        ],
+        "session_outcome": "resolved",
+        "user_intent": "User wanted to cancel subscription due to missing CSV export functionality needed for weekly management reporting, but was willing to stay if a solution could be provided.",
+        "risk_signals": [
+          "churn_risk",
+          "frustration"
+        ],
+        "key_entities": [
+          "3 months",
+          "CSV exports",
+          "two weeks",
+          "50% discount",
+          "2 months",
+          "/reports endpoint"
+        ],
+        "action_items": [
+          "Send step-by-step API guide to user's email",
+          "Apply 50% discount for next 2 billing cycles",
+          "Follow up when CSV exports launch"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "A11",
+      "label": "Sales demo — schema universal (cross)",
+      "schema": "universal",
+      "file": "sales_demo.txt",
+      "success": true,
+      "elapsed_seconds": 7.36,
+      "quality_issues": [],
+      "quality_ok": true,
+      "fields": {
+        "title": "SaaS Analytics Platform Trial Setup",
+        "summary": "User from a company using Zendesk inquired about analytics for their 15,000 monthly AI agent conversations after seeing the platform at a SaaS conference. They need a solution within two weeks for quarterly board presentation and have a $200/month budget. Agent recommended Pro plan at $49/month and set up a 14-day trial for their team lead Mike at acmecorp.com. The conversation resulted in successful trial initiation with follow-up scheduled.",
+        "sentiment": "positive",
+        "sentiment_intensity": "medium",
+        "topics": [
+          "ai_conversation_analytics",
+          "pricing",
+          "trial_setup",
+          "competitive_evaluation",
+          "implementation_timeline"
+        ],
+        "session_outcome": "resolved",
+        "user_intent": "The user was looking for an affordable AI conversation analytics solution that could be deployed quickly to provide customer insights for an upcoming board presentation.",
+        "risk_signals": [],
+        "key_entities": [
+          "SaaS conference",
+          "Zendesk",
+          "15,000 conversations",
+          "Qualtrics",
+          "Pro plan",
+          "$49/month",
+          "two weeks",
+          "March",
+          "$200/month",
+          "mike@acmecorp.com",
+          "14 days"
+        ],
+        "action_items": [
+          "Send trial setup instructions to mike@acmecorp.com",
+          "Check in after the first week to review analysis results"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "A12",
+      "label": "Sales objection — schema universal (cross)",
+      "schema": "universal",
+      "file": "sales_objection.txt",
+      "success": true,
+      "elapsed_seconds": 7.37,
+      "quality_issues": [],
+      "quality_ok": true,
+      "fields": {
+        "title": "Product Evaluation for Customer Service Analytics",
+        "summary": "User evaluated an AI-powered conversation analytics platform for their startup's customer service team. They expressed budget concerns and skepticism about AI accuracy, comparing it to manual review processes and competitor Gong. The agent addressed cost concerns, explained accuracy rates, and positioned the product for AI chatbot conversations. The session concluded with agreement to run a pilot with 100 conversations after internal discussion.",
+        "sentiment": "mixed",
+        "sentiment_intensity": "medium",
+        "topics": [
+          "product_evaluation",
+          "pricing",
+          "accuracy_concerns",
+          "competitor_comparison",
+          "pilot_trial"
+        ],
+        "session_outcome": "resolved",
+        "user_intent": "The user wanted to evaluate whether an AI-powered conversation analytics platform would provide sufficient value to justify the cost for their startup's customer service operations.",
+        "risk_signals": [],
+        "key_entities": [
+          "2000 conversations per week",
+          "50-100 conversations reviewed",
+          "Pro plan",
+          "$49/month",
+          "5000 conversations",
+          "85-90% accuracy",
+          "100 conversations",
+          "Intercom",
+          "Slack",
+          "Gong",
+          "CTO"
+        ],
+        "action_items": [
+          "Set up free trial for 100 conversations with no credit card required",
+          "User will discuss with CTO before proceeding",
+          "Plan to start pilot next week"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "A13",
+      "label": "Coaching progress — schema universal (cross)",
+      "schema": "universal",
+      "file": "coaching_progress.txt",
+      "success": true,
+      "elapsed_seconds": 6.43,
+      "quality_issues": [],
+      "quality_ok": true,
+      "fields": {
+        "title": "Therapy Progress: Anxiety Management and Thesis Work",
+        "summary": "User reports significant improvement in managing thesis-related anxiety using breathing techniques learned in previous session. Sleep improved from irregular to sleeping through the night three times per week. User overcame two-month avoidance pattern and began working on thesis methodology chapter. Anxiety levels decreased from 8/10 to 5/10, and user demonstrated cognitive reframing skills by recognizing catastrophizing patterns. Session concluded with user setting goal to present draft section to study group.",
+        "sentiment": "positive",
+        "sentiment_intensity": "medium",
+        "topics": [
+          "anxiety_management",
+          "sleep_improvement",
+          "thesis_writing",
+          "cognitive_reframing",
+          "academic_progress"
+        ],
+        "session_outcome": "resolved",
+        "user_intent": "The user wanted to share progress updates from implementing previous therapy recommendations and discuss continued improvement in managing thesis-related anxiety.",
+        "risk_signals": [],
+        "key_entities": [
+          "breathing technique",
+          "thesis defense",
+          "methodology chapter",
+          "study group",
+          "advisor"
+        ],
+        "action_items": [
+          "Continue working on thesis methodology chapter",
+          "Present draft section to study group",
+          "Check in next week on study group presentation progress"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "A14",
+      "label": "Coaching crisis — schema universal (cross)",
+      "schema": "universal",
+      "file": "coaching_crisis.txt",
+      "success": true,
+      "elapsed_seconds": 8.41,
+      "quality_issues": [],
+      "quality_ok": true,
+      "fields": {
+        "title": "Reframing Self-Worth After Roommate Conflict",
+        "summary": "User expressed feeling discouraged and withdrawn after a fight with their roommate who called them 'too negative.' The user had been isolating, skipping classes and meals, and struggling with feelings of being 'too much.' The agent helped reframe these beliefs as internalized messages from others rather than personal truths. The session focused on recognizing patterns of emotional invalidation from childhood and roommate conflict. The user showed openness to working on core beliefs and agreed to practice questioning negative self-talk.",
+        "sentiment": "negative",
+        "sentiment_intensity": "high",
+        "topics": [
+          "roommate_conflict",
+          "self_worth",
+          "emotional_regulation",
+          "isolation_behaviors",
+          "cognitive_reframing"
+        ],
+        "session_outcome": "resolved",
+        "user_intent": "The user was seeking support for overwhelming feelings of inadequacy and depression triggered by interpersonal conflict, ultimately needing help reframing negative self-beliefs.",
+        "risk_signals": [
+          "negative_experience",
+          "confusion"
+        ],
+        "key_entities": [
+          "roommate",
+          "Tuesday",
+          "parents",
+          "journaling",
+          "next week"
+        ],
+        "action_items": [
+          "When noticing the thought 'I'm too much,' pause and ask 'according to whom?'",
+          "Schedule same time next week"
+        ]
+      },
+      "error": null
+    }
+  ]
 }

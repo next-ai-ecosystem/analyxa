@@ -12,7 +12,7 @@
 | Fase 0: Inicialización | Setup proyecto y servidor | 1 sesión | ✅ Completa |
 | Fase 1: Motor Core | Schema, prompt, LLM, analyzer | Días 1-14 | ✅ Completa |
 | Fase 2: CLI + Integraciones | CLI, Redis, Qdrant, batch, schemas | Días 8-20 | ✅ Completa |
-| Fase 3: Open Source Launch | README, PyPI, GitHub, docs | Días 15-25 | En progreso |
+| Fase 3: Open Source Launch | README, PyPI, GitHub, docs | Días 15-25 | ✅ Completa |
 | Fase 1.5: Primeros Ingresos | Fiverr, landing, primer cliente | Días 20-30 | Pendiente |
 | Fase 4: Visibilidad + Escala | Product Hunt, blog, SaaS | Días 30-90 | Pendiente |
 
@@ -99,9 +99,9 @@
 
 ### Paso 3.2 — Publicación
 - [x] GitHub push (next-ai-ecosystem/analyxa)
-- [ ] PyPI publish (analyxa v0.1.0)
+- [x] PyPI publish (analyxa v0.1.0)
 - [x] GitHub Release + tag
-- [ ] Verificación pip install
+- [x] Verificación pip install
 
 ---
 
