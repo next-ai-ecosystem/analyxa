@@ -66,10 +66,10 @@
 ## Fase 2 — CLI + Integraciones
 
 ### Paso 2.1 — CLI + Config
-- [ ] Implementar config.py (centralizado, .env)
-- [ ] Implementar cli.py (analyze, schemas list/show)
-- [ ] Entry point en pyproject.toml
-- [ ] Tests de CLI
+- [x] Implementar config.py (centralizado, .env)
+- [x] Implementar cli.py (analyze, schemas list/show)
+- [x] Entry point en pyproject.toml
+- [x] Tests de CLI
 
 ### Paso 2.2 — Redis + Qdrant + Batch
 - [ ] Implementar redis_source.py

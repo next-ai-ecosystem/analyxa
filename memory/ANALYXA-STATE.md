@@ -1,7 +1,7 @@
 # ANALYXA — Estado del Proyecto
 
 > Fuente de verdad del estado actual. Se actualiza al final de cada IF.
-> Última actualización: 2026-03-12 — Sesión 0
+> Última actualización: 2026-03-14 — Sesión 5
 
 ---
 
@@ -9,11 +9,11 @@
 
 | Dimensión | Valor |
 |-----------|-------|
-| **Fase actual** | Fase 0 — Inicialización |
+| **Fase actual** | Fase 2 — CLI + Integraciones |
 | **Bloqueo activo** | Ninguno |
-| **Siguiente acción** | Preparar workspace en VPS + diseñar IF-001: Schema System |
-| **Días transcurridos** | 0 (inicio: 2026-03-12) |
-| **Sesiones completadas** | 0 |
+| **Siguiente acción** | IF-006: Redis + Qdrant + Batch (Paso 2.2) |
+| **Días transcurridos** | 2 (inicio: 2026-03-12) |
+| **Sesiones completadas** | 5 |
 
 ---
 
@@ -24,18 +24,17 @@
 - [x] Proyecto Claude creado
 - [x] Artefactos MEMORIA inicializados
 - [x] Knowledge base cargado
-- [ ] VPS/workspace preparado
-- [ ] Git inicializado
-- [ ] Claude Code verificado
+- [x] VPS/workspace preparado
+- [x] Git inicializado
 
-### Fase 1 — Motor Core
-- [ ] Schema system (schema.py + universal.yaml + support.yaml)
-- [ ] Prompt generator (prompt_builder.py)
-- [ ] LLM client (llm_client.py)
-- [ ] Analyzer pipeline (analyzer.py + embeddings + sources + sinks)
+### Fase 1 — Motor Core ✅
+- [x] Schema system (schema.py + universal.yaml + support.yaml)
+- [x] Prompt generator (prompt_builder.py)
+- [x] LLM client (llm_client.py)
+- [x] Analyzer pipeline (analyzer.py + embeddings + sources + sinks)
 
 ### Fase 2 — CLI + Integraciones
-- [ ] CLI + config (cli.py, config.py)
+- [x] CLI + config (cli.py, config.py, pyproject.toml)
 - [ ] Redis source + Qdrant sink + batch
 - [ ] Schemas verticales (sales, coaching) + dogfooding
 
@@ -59,6 +58,10 @@
 | Qdrant | Pendiente | Docker container por instalar |
 | Anthropic API | Pendiente | Key por configurar en .env |
 | OpenAI API | Pendiente | Key por configurar en .env |
+| anthropic SDK | OK | v0.84.0 instalado |
+| openai SDK | OK | v2.26.0 instalado |
+| click | OK | v8.x instalado |
+| python-dotenv | OK | v1.x instalado |
 
 ---
 
@@ -66,6 +69,6 @@
 
 | Métrica | Actual | Target |
 |---------|--------|--------|
-| Tests pasando | 0 | — |
-| IFs ejecutadas | 0 | — |
-| Schemas implementados | 0 | 4 |
+| Tests pasando | 64 | — |
+| IFs ejecutadas | 5 | — |
+| Schemas implementados | 2 | 4 |

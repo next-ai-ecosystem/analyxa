@@ -68,7 +68,23 @@ class LLMClient:
         self.provider = provider
         self.model = model or _DEFAULTS[provider]
 
-        resolved_key = api_key or os.environ.get(_ENV_VARS[provider])
+        # Fallback chain: explicit api_key → config → os.environ
+        if api_key is None:
+            try:
+                from analyxa.config import get_config
+                config = get_config()
+                if self.provider == "anthropic":
+                    api_key = config.anthropic_api_key
+                elif self.provider == "openai":
+                    api_key = config.openai_api_key
+            except Exception:
+                pass  # Fallback to os.environ (original behavior)
+
+        if api_key is None:
+            env_var = _ENV_VARS[provider]
+            api_key = os.environ.get(env_var)
+
+        resolved_key = api_key
         if not resolved_key:
             env_var = _ENV_VARS[provider]
             raise ValueError(

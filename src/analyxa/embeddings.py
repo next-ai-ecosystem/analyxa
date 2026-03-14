@@ -27,7 +27,19 @@ class EmbeddingGenerator:
         if openai is None:
             return
 
-        resolved_key = api_key or os.environ.get("OPENAI_API_KEY")
+        # Fallback chain: explicit api_key → config → os.environ
+        if api_key is None:
+            try:
+                from analyxa.config import get_config
+                config = get_config()
+                api_key = config.openai_api_key
+            except Exception:
+                pass
+
+        if api_key is None:
+            api_key = os.environ.get("OPENAI_API_KEY")
+
+        resolved_key = api_key
         if not resolved_key:
             return  # Silent degradation — no key configured
 
