@@ -306,3 +306,46 @@
 
 ### Siguiente acción
 - IF-008: Fase 3 — Open Source Launch (README, PyPI, docs, LICENSE)
+
+---
+## 2026-03-14 — Sesión 8: IF-008 Open Source Launch
+
+**Tipo:** Fabricación + Publicación
+**IF:** IF-008
+**Ejecutor:** Claude Code
+**Paso Blueprint:** Fase 3, Pasos 3.1 + 3.2
+
+### Cambios ejecutados
+1. **README.md** — Profesional con quick start, CLI, Python API, schemas, pipeline, config
+2. **LICENSE** — Apache 2.0 completa
+3. **CONTRIBUTING.md** — Guía para contributors
+4. **docs/** — quickstart.md, schemas.md, api-reference.md
+5. **Build test** — wheel verificado, schemas incluidos, install limpio en venv aislado
+
+### Archivos creados
+- README.md
+- LICENSE
+- CONTRIBUTING.md
+- docs/quickstart.md
+- docs/schemas.md
+- docs/api-reference.md
+
+### Build verificado
+- `analyxa-0.1.0-py3-none-any.whl` — 4 schemas YAML incluidos
+- Install limpio en `/tmp/analyxa-test-install` — `analyxa version` + `analyxa schemas list` OK
+- 98 tests pasando
+
+### Publicación pendiente
+- GitHub remote no configurado — Javier debe agregar `git remote add origin`
+- PyPI token no disponible — Javier debe configurar `.pypirc` o `TWINE_PASSWORD`
+- Wheel y sdist listos en `dist/` para publicación inmediata
+
+### Git
+- commit: `feat(IF-008): open source packaging — README, docs, LICENSE, build verified`
+- tag: v0.1.0
+
+### HITO: Fase 3 — Open Source Launch PARCIAL (packaging listo, publicación pendiente)
+
+### Siguiente acción
+- Completar publicación (GitHub push + PyPI publish) cuando Javier configure accesos
+- IF-009: Fiverr Gig + Landing Page (Fase 1.5)
