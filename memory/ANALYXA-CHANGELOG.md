@@ -349,3 +349,35 @@
 ### Siguiente acción
 - Completar publicación (GitHub push + PyPI publish) cuando Javier configure accesos
 - IF-009: Fiverr Gig + Landing Page (Fase 1.5)
+
+---
+## 2026-03-14 — Sesión 9: IF-009 Fiverr Gig + Landing Page
+
+**Tipo:** Fabricación (comercial)
+**IF:** IF-009
+**Ejecutor:** Claude Code
+**Paso Blueprint:** Fase 1.5, Pasos 1.5.1 + 1.5.2
+
+### Cambios ejecutados
+1. **Fiverr gig completo**
+   - docs/fiverr-gig.md: título, descripción, 3 tiers ($297/$497/$997), FAQ, specs de imágenes
+   - Listo para copiar a Fiverr
+
+2. **Landing page analyxa.ai**
+   - /var/www/analyxa/index.html: single-page, dark theme, responsive
+   - Secciones: hero, problem, pipeline, schemas, code examples, pricing, tech stack, footer
+   - Nginx configurado y sirviendo en http://66.94.117.83/
+   - Terminal estilizada en hero con análisis ejemplo
+   - Tabs interactivos para code examples (Python/CLI/Pipeline)
+
+### Archivos creados
+- docs/fiverr-gig.md
+- /var/www/analyxa/index.html
+- /etc/nginx/sites-available/analyxa
+
+### Git
+- commit: feat(IF-009): Fiverr gig copy + analyxa.ai landing page + nginx config
+
+### Siguiente acción
+- Javier: publicar gig en Fiverr, configurar DNS analyxa.ai, GitHub remote, PyPI token, API keys
+- IF-010: completar publicación + Ishara dogfooding

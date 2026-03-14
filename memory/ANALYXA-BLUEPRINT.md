@@ -108,11 +108,11 @@
 ## Fase 1.5 — Primeros Ingresos
 
 ### Paso 1.5.1 — Fiverr
-- [ ] Crear gig con 3 tiers ($297/$497/$997)
-- [ ] Descripción, FAQ, imágenes
+- [x] Crear gig con 3 tiers ($297/$497/$997)
+- [x] Descripción, FAQ, imágenes (specs)
 
 ### Paso 1.5.2 — Landing page
-- [ ] analyxa.ai con hero, features, pricing, quickstart
+- [x] analyxa.ai con hero, features, pricing, quickstart
 
 ### Paso 1.5.3 — Primer cliente
 - [ ] Ishara dogfooding (schema coaching 18 campos)

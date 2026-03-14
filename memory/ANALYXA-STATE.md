@@ -1,7 +1,7 @@
 # ANALYXA — Estado del Proyecto
 
 > Fuente de verdad del estado actual. Se actualiza al final de cada IF.
-> Última actualización: 2026-03-14 — Sesión 8
+> Última actualización: 2026-03-14 — Sesión 9
 
 ---
 
@@ -9,17 +9,17 @@
 
 | Dimensión | Valor |
 |-----------|-------|
-| **Fase actual** | Fase 3 — Open Source Launch (packaging listo, publicación pendiente) |
-| **Bloqueo activo** | GitHub remote + PyPI token por configurar |
-| **Siguiente acción** | Completar publicación, luego IF-009: Fiverr + Landing |
+| **Fase actual** | Fase 1.5 — Primeros Ingresos |
+| **Bloqueo activo** | GitHub remote + PyPI token + API keys (pendientes de Javier) |
+| **Siguiente acción** | Javier: configurar accesos. Luego IF-010: publicar + Ishara dogfooding |
 | **Días transcurridos** | 3 (inicio: 2026-03-12) |
-| **Sesiones completadas** | 8 |
+| **Sesiones completadas** | 9 |
 
 ---
 
 ## Progreso por Fase
 
-### Fase 0 — Inicialización
+### Fase 0 — Inicialización ✅
 - [x] Acta Fundacional generada y validada
 - [x] Proyecto Claude creado
 - [x] Artefactos MEMORIA inicializados
@@ -43,8 +43,8 @@
 - [ ] Publicación (GitHub push, PyPI publish) — requiere remote + token
 
 ### Fase 1.5 — Primeros Ingresos
-- [ ] Fiverr gig
-- [ ] Landing page analyxa.ai
+- [x] Fiverr gig (copy completo, listo para publicar)
+- [x] Landing page analyxa.ai (servida en VPS, http://66.94.117.83/)
 - [ ] Primer cliente (Ishara dogfooding)
 
 ---
@@ -56,18 +56,12 @@
 | VPS 66.94.117.83 | OK | Contabo, Ubuntu 22.04, 8GB RAM |
 | Redis | OK | Docker, v7-alpine, localhost:6379 |
 | Qdrant | OK | Docker, latest, localhost:6333 |
+| Nginx | OK | Sirviendo landing en puerto 80 |
 | Anthropic API | Pendiente | Key placeholder en .env |
 | OpenAI API | Pendiente | Key placeholder en .env |
-| GitHub remote | Pendiente | No configurado — Javier debe agregar |
-| PyPI token | Pendiente | No configurado — Javier debe agregar |
-| anthropic SDK | OK | v0.84.0 instalado |
-| openai SDK | OK | v2.26.0 instalado |
-| click | OK | v8.x instalado |
-| python-dotenv | OK | v1.x instalado |
-| redis SDK | OK | v5.x instalado |
-| qdrant-client SDK | OK | v1.17.1 instalado |
-| build | OK | Instalado para packaging |
-| twine | OK | Instalado para PyPI upload |
+| GitHub remote | Pendiente | Javier debe agregar |
+| PyPI token | Pendiente | Javier debe agregar |
+| DNS analyxa.ai | Pendiente | Javier debe apuntar a 66.94.117.83 |
 
 ---
 
@@ -76,8 +70,9 @@
 | Métrica | Actual | Target |
 |---------|--------|--------|
 | Tests pasando | 98 | — |
-| IFs ejecutadas | 8 | — |
+| IFs ejecutadas | 9 | — |
 | Schemas implementados | 4 | 4 |
-| Conversaciones ejemplo | 8 | 8 |
+| Landing page | Servida | http://66.94.117.83/ |
+| Fiverr gig | Listo | Pendiente publicar |
 | PyPI published | pendiente | v0.1.0 |
 | GitHub pushed | pendiente | next-ai-ecosystem/analyxa |
