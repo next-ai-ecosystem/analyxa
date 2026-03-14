@@ -10,7 +10,7 @@
 | Dimensión | Valor |
 |-----------|-------|
 | **Fase actual** | Fase 1.5 — Primeros Ingresos |
-| **Bloqueo activo** | GitHub remote + PyPI token + API keys (pendientes de Javier) |
+| **Bloqueo activo** | PyPI token + API keys (pendientes de Javier) |
 | **Siguiente acción** | Javier: configurar accesos. Luego IF-010: publicar + Ishara dogfooding |
 | **Días transcurridos** | 3 (inicio: 2026-03-12) |
 | **Sesiones completadas** | 9 |
@@ -59,7 +59,7 @@
 | Nginx | OK | Sirviendo landing en puerto 80 |
 | Anthropic API | Pendiente | Key placeholder en .env |
 | OpenAI API | Pendiente | Key placeholder en .env |
-| GitHub remote | Pendiente | Javier debe agregar |
+| GitHub remote | OK | next-ai-ecosystem/analyxa |
 | PyPI token | Pendiente | Javier debe agregar |
 | DNS analyxa.ai | Pendiente | Javier debe apuntar a 66.94.117.83 |
 
@@ -75,4 +75,4 @@
 | Landing page | Servida | http://66.94.117.83/ |
 | Fiverr gig | Listo | Pendiente publicar |
 | PyPI published | pendiente | v0.1.0 |
-| GitHub pushed | pendiente | next-ai-ecosystem/analyxa |
+| GitHub pushed | ✅ | next-ai-ecosystem/analyxa |

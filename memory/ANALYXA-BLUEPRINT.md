@@ -98,9 +98,9 @@
 - [x] Build test verificado
 
 ### Paso 3.2 — Publicación
-- [ ] GitHub push (next-ai-ecosystem/analyxa)
+- [x] GitHub push (next-ai-ecosystem/analyxa)
 - [ ] PyPI publish (analyxa v0.1.0)
-- [ ] GitHub Release + tag
+- [x] GitHub Release + tag
 - [ ] Verificación pip install
 
 ---
