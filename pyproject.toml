@@ -29,6 +29,8 @@ dependencies = [
     "click>=8.0.0",
     "python-dotenv>=1.0.0",
     "pyyaml>=6.0",
+    "redis>=5.0.0",
+    "qdrant-client>=1.7.0",
 ]
 
 [project.optional-dependencies]

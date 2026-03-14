@@ -217,3 +217,42 @@
 
 ### Siguiente acción
 - IF-006: Redis + Qdrant + Batch (Paso 2.2)
+
+---
+## 2026-03-14 — Sesión 6: IF-006 Redis + Qdrant + Batch
+
+**Tipo:** Fabricación
+**IF:** IF-006
+**Ejecutor:** Claude Code
+**Paso Blueprint:** Fase 2, Paso 2.2
+
+### Cambios ejecutados
+1. **Docker Compose** — Redis 7 + Qdrant levantados en docker/docker-compose.yaml
+2. **RedisSource** — push, get, pending, next, mark_analyzed/failed, list_all, flush
+3. **QdrantSink** — store, search_similar (query_points API), get, count, auto-create collection 1536D cosine; zero vector fallback para puntos sin embedding
+4. **BatchProcessor** — batch_analyze (un Analyzer reusado) + batch_analyze_from_redis (cola Redis → Qdrant)
+5. **CLI extendido** — 3 comandos nuevos: batch, search, redis (push/list/process/flush)
+6. **pyproject.toml** — dependencias redis>=5.0.0, qdrant-client>=1.7.0 agregadas
+7. **22 tests nuevos** — 9 redis (integración) + 8 qdrant (integración) + 5 batch (unit mock) → 86 total
+
+### Archivos creados/modificados
+- docker/docker-compose.yaml (nuevo)
+- src/analyxa/sources/redis_source.py (nuevo)
+- src/analyxa/sinks/qdrant_sink.py (nuevo)
+- src/analyxa/batch.py (nuevo)
+- src/analyxa/cli.py (extendido: batch, search, redis group)
+- pyproject.toml (redis + qdrant-client deps)
+- tests/test_redis_source.py, test_qdrant_sink.py, test_batch.py (nuevos)
+
+### Fix notable
+- qdrant-client v1.17.1 eliminó client.search() → usar client.query_points() con response.points
+
+### Dependencias agregadas
+- redis>=5.0.0 (v5.x instalado)
+- qdrant-client>=1.7.0 (v1.17.1 instalado)
+
+### Git
+- commit: feat(IF-006): Redis + Qdrant + batch — infrastructure layer + 22 tests
+
+### Siguiente acción
+- IF-007: Schemas verticales + Dogfooding (Paso 2.3)

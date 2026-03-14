@@ -11,7 +11,7 @@
 |------|-------------|----------|--------|
 | Fase 0: Inicialización | Setup proyecto y servidor | 1 sesión | ✅ Completa |
 | Fase 1: Motor Core | Schema, prompt, LLM, analyzer | Días 1-14 | ✅ Completa |
-| Fase 2: CLI + Integraciones | CLI, Redis, Qdrant, batch, schemas | Días 8-20 | Pendiente |
+| Fase 2: CLI + Integraciones | CLI, Redis, Qdrant, batch, schemas | Días 8-20 | En progreso |
 | Fase 3: Open Source Launch | README, PyPI, GitHub, docs | Días 15-25 | Pendiente |
 | Fase 1.5: Primeros Ingresos | Fiverr, landing, primer cliente | Días 20-30 | Pendiente |
 | Fase 4: Visibilidad + Escala | Product Hunt, blog, SaaS | Días 30-90 | Pendiente |
@@ -72,11 +72,11 @@
 - [x] Tests de CLI
 
 ### Paso 2.2 — Redis + Qdrant + Batch
-- [ ] Implementar redis_source.py
-- [ ] Implementar qdrant_sink.py
-- [ ] Implementar batch.py
-- [ ] CLI: batch, search, redis
-- [ ] Tests de infraestructura
+- [x] Implementar redis_source.py
+- [x] Implementar qdrant_sink.py
+- [x] Implementar batch.py
+- [x] CLI: batch, search, redis
+- [x] Tests de infraestructura
 
 ### Paso 2.3 — Schemas verticales + Dogfooding
 - [ ] Crear sales.yaml (10 + 6 campos)

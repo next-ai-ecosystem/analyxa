@@ -1,7 +1,7 @@
 # ANALYXA — Estado del Proyecto
 
 > Fuente de verdad del estado actual. Se actualiza al final de cada IF.
-> Última actualización: 2026-03-14 — Sesión 5
+> Última actualización: 2026-03-14 — Sesión 6
 
 ---
 
@@ -11,9 +11,9 @@
 |-----------|-------|
 | **Fase actual** | Fase 2 — CLI + Integraciones |
 | **Bloqueo activo** | Ninguno |
-| **Siguiente acción** | IF-006: Redis + Qdrant + Batch (Paso 2.2) |
-| **Días transcurridos** | 2 (inicio: 2026-03-12) |
-| **Sesiones completadas** | 5 |
+| **Siguiente acción** | IF-007: Schemas verticales + Dogfooding (Paso 2.3) |
+| **Días transcurridos** | 3 (inicio: 2026-03-12) |
+| **Sesiones completadas** | 6 |
 
 ---
 
@@ -35,7 +35,7 @@
 
 ### Fase 2 — CLI + Integraciones
 - [x] CLI + config (cli.py, config.py, pyproject.toml)
-- [ ] Redis source + Qdrant sink + batch
+- [x] Redis source + Qdrant sink + batch
 - [ ] Schemas verticales (sales, coaching) + dogfooding
 
 ### Fase 3 — Open Source Launch
@@ -54,14 +54,16 @@
 | Dependencia | Estado | Notas |
 |-------------|--------|-------|
 | VPS 66.94.117.83 | OK | Contabo, Ubuntu 22.04, 8GB RAM |
-| Redis | Pendiente | Docker container por instalar |
-| Qdrant | Pendiente | Docker container por instalar |
+| Redis | OK | Docker, v7-alpine, localhost:6379 |
+| Qdrant | OK | Docker, latest, localhost:6333 |
 | Anthropic API | Pendiente | Key por configurar en .env |
 | OpenAI API | Pendiente | Key por configurar en .env |
 | anthropic SDK | OK | v0.84.0 instalado |
 | openai SDK | OK | v2.26.0 instalado |
 | click | OK | v8.x instalado |
 | python-dotenv | OK | v1.x instalado |
+| redis SDK | OK | v5.x instalado |
+| qdrant-client SDK | OK | v1.17.1 instalado |
 
 ---
 
@@ -69,6 +71,6 @@
 
 | Métrica | Actual | Target |
 |---------|--------|--------|
-| Tests pasando | 64 | — |
-| IFs ejecutadas | 5 | — |
+| Tests pasando | 86 | — |
+| IFs ejecutadas | 6 | — |
 | Schemas implementados | 2 | 4 |
