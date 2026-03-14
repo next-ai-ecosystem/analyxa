@@ -13,7 +13,7 @@
 | Fase 1: Motor Core | Schema, prompt, LLM, analyzer | Días 1-14 | ✅ Completa |
 | Fase 2: CLI + Integraciones | CLI, Redis, Qdrant, batch, schemas | Días 8-20 | ✅ Completa |
 | Fase 3: Open Source Launch | README, PyPI, GitHub, docs | Días 15-25 | ✅ Completa |
-| Fase 1.5: Primeros Ingresos | Fiverr, landing, primer cliente | Días 20-30 | Pendiente |
+| Fase 1.5: Primeros Ingresos | Fiverr, landing, primer cliente | Días 20-30 | En progreso |
 | Fase 4: Visibilidad + Escala | Product Hunt, blog, SaaS | Días 30-90 | Pendiente |
 
 **Speed gate:** Primer ingreso real antes del día 30.
@@ -108,11 +108,13 @@
 ## Fase 1.5 — Primeros Ingresos
 
 ### Paso 1.5.1 — Fiverr
-- [x] Crear gig con 3 tiers ($297/$497/$997)
-- [x] Descripción, FAQ, imágenes (specs)
+- [x] Crear gig con 3 tiers ($295/$495/$995)
+- [x] Descripción, FAQ, imágenes
 
 ### Paso 1.5.2 — Landing page
 - [x] analyxa.ai con hero, features, pricing, quickstart
+- [x] DNS configurado y propagado
+- [x] HTTPS con Let's Encrypt
 
 ### Paso 1.5.3 — Primer cliente
 - [ ] Ishara dogfooding (schema coaching 18 campos)

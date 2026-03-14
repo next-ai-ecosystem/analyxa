@@ -408,3 +408,18 @@ GitHub ✅ + PyPI ✅ + dogfooding validado ✅
 - DNS analyxa.ai → 66.94.117.83
 - Certbot HTTPS
 - Publicar gig en Fiverr
+
+---
+## 2026-03-14 — Operativo: DNS + HTTPS + Fiverr
+
+**Tipo:** Configuración externa (Director)
+**Ejecutor:** Javier
+
+### Cambios ejecutados
+1. **DNS configurado** — Namecheap A records: @ y www → 66.94.117.83
+2. **HTTPS activo** — Certbot + Let's Encrypt, auto-renew, expira 2026-06-12
+3. **Fiverr gig publicado** — 3 tiers ($295/$495/$995), 3 imágenes, 5 FAQs, perfil seller completo
+
+### Siguiente acción
+- Primer cliente (Ishara dogfooding)
+- Fase 4: Visibilidad + Escala

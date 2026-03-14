@@ -10,8 +10,8 @@
 | Dimensión | Valor |
 |-----------|-------|
 | **Fase actual** | Fase 3 ✅ + Fase 1.5 en progreso |
-| **Bloqueo activo** | DNS analyxa.ai + Fiverr publish (pendientes de Javier) |
-| **Siguiente acción** | Javier: DNS + Certbot + publicar Fiverr. Luego Fase 4. |
+| **Bloqueo activo** | Ninguno |
+| **Siguiente acción** | Primer cliente (Ishara). Luego Fase 4 — Visibilidad + Escala. |
 | **Días transcurridos** | 3 (inicio: 2026-03-12) |
 | **Sesiones completadas** | 9 |
 
@@ -43,11 +43,10 @@
 - [x] Publicación (GitHub push ✅, PyPI v0.1.0 ✅, tag v0.1.0 ✅, pip install verified ✅)
 
 ### Fase 1.5 — Primeros Ingresos
-- [x] Fiverr gig (copy completo, listo para publicar en Fiverr)
-- [x] Landing page analyxa.ai (servida en VPS, http://66.94.117.83/)
-- [ ] Publicar gig en Fiverr (pendiente Javier)
-- [ ] DNS analyxa.ai → 66.94.117.83 (pendiente Javier)
-- [ ] Certbot HTTPS (pendiente DNS)
+- [x] Fiverr gig (publicado y live en fiverr.com)
+- [x] Landing page analyxa.ai (servida con HTTPS en https://analyxa.ai)
+- [x] DNS analyxa.ai → 66.94.117.83
+- [x] Certbot HTTPS (Let's Encrypt, auto-renew, expira 2026-06-12)
 - [ ] Primer cliente (Ishara dogfooding)
 
 ---
@@ -64,7 +63,9 @@
 | OpenAI API | OK | Key configurada en .env |
 | GitHub remote | OK | next-ai-ecosystem/analyxa |
 | PyPI | OK | v0.1.0 publicado — pypi.org/project/analyxa |
-| DNS analyxa.ai | Pendiente | Javier debe apuntar A record a 66.94.117.83 |
+| DNS analyxa.ai | OK | A record → 66.94.117.83, propagado |
+| HTTPS/SSL | OK | Let's Encrypt, auto-renew, expira 2026-06-12 |
+| Fiverr gig | OK | Live, 3 tiers: $295/$495/$995 |
 
 ---
 
@@ -76,7 +77,7 @@
 | IFs ejecutadas | 9 | — |
 | Schemas implementados | 4 | 4 ✅ |
 | Dogfooding | 14/14 passed | 100% quality |
-| Landing page | Servida | http://66.94.117.83/ |
-| Fiverr gig | Copy listo | Pendiente publicar |
+| Landing page | ✅ HTTPS | https://analyxa.ai |
+| Fiverr gig | ✅ Live | 3 tiers: $295/$495/$995 |
 | PyPI published | ✅ v0.1.0 | pypi.org/project/analyxa |
 | GitHub pushed | ✅ | next-ai-ecosystem/analyxa |
