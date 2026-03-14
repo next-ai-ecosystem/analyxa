@@ -1,0 +1,12 @@
+User: Hi, I was charged $49.99 twice on my credit card this month for my Pro subscription.
+Agent: I'm sorry to hear about the duplicate charge. Let me look into your account right away. Can you confirm the email address on your account?
+User: It's sarah@company.com
+Agent: Thank you Sarah. I can see your account and I do see two charges of $49.99 on March 3rd and March 5th. The March 5th charge appears to be a duplicate.
+User: This is the second time this has happened in three months. It's really frustrating.
+Agent: I completely understand your frustration, and I sincerely apologize for the recurring issue. I'm processing a refund for the duplicate $49.99 charge right now. You should see it reflected in 3-5 business days.
+User: Okay, but what about last time? I never got that refund either.
+Agent: Let me check... You're right, I can see the previous duplicate charge from January was flagged but the refund wasn't processed. I'm escalating this to our billing team lead and processing both refunds — $49.99 for March and $49.99 for January, totaling $99.98.
+User: Thank you. But can you please make sure this doesn't keep happening? I don't want to have to check my statement every month.
+Agent: Absolutely. I've flagged your account for billing review and set up a duplicate charge prevention monitor. Our billing team lead will also review your account within 24 hours. You'll receive a confirmation email once both refunds are processed. Is there anything else I can help with?
+User: No, that covers it. Thanks for handling this.
+Agent: Thank you for your patience, Sarah. Again, I apologize for the inconvenience. Don't hesitate to reach out if you notice any other issues.

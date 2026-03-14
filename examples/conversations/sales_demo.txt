@@ -1,0 +1,13 @@
+User: We saw your platform at the SaaS conference and we're interested in learning more. We currently use Zendesk for support tickets but have no analytics on our AI agent conversations.
+Agent: Great to hear you found us at the conference! Many companies in your position are dealing with thousands of AI conversations without any visibility into what's actually happening in them. How many conversations does your AI agent handle monthly?
+User: Around 15,000 per month across three support channels — chat, email, and social media.
+Agent: That's a solid volume. With 15,000 conversations, you're sitting on a goldmine of customer insights. Our platform can analyze every conversation and extract sentiment, escalation risk, resolution quality, and more. Have you looked at any other analytics solutions?
+User: We evaluated Qualtrics but it's too expensive for our stage. We also looked at building something in-house but our engineering team is at capacity. We need something we can deploy quickly.
+Agent: Makes sense. Compared to Qualtrics, we're significantly more affordable and purpose-built for AI conversations specifically. For your volume, you'd be looking at our Pro plan at $49/month. How quickly do you need this running?
+User: Ideally within the next two weeks. Our VP of Customer Success is presenting quarterly analytics to the board in March and we have zero data on AI agent performance right now.
+Agent: Two weeks is very doable. We can have you fully set up in 3-5 days. The Pro plan includes the support schema which is perfect for your use case — it tracks satisfaction prediction, issue categorization, escalation needs, resolution quality, and customer effort score on top of the standard analytics.
+User: What about a budget? We have approval for up to $200/month for analytics tooling, but I'd need to justify anything above that.
+Agent: You're well within range. Pro at $49/month is far under your budget. If you want, we could start with Pro and upgrade to Enterprise at $199/month later when you need batch processing and advanced search. Want me to set up a trial this week?
+User: Yes, let's do a trial. Can you send the details to our team lead? His email is mike@acmecorp.com
+Agent: Done! I'll send Mike the trial setup instructions today. You'll have full access for 14 days. I'll check in after the first week to see how the analysis looks. Anything else you'd like to know?
+User: That covers it. Looking forward to seeing real data from our conversations.

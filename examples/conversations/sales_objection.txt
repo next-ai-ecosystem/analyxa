@@ -1,0 +1,13 @@
+User: Hi, I'm evaluating your product for our customer service team. But honestly, I'm not sure AI-powered analytics is worth the investment. Our team leads already review conversations manually.
+Agent: That's a fair concern. Manual review definitely works — but at what scale? How many conversations does your team handle weekly?
+User: About 2,000 per week. Our team leads review maybe 50-100 of those, so about 5%.
+Agent: So 95% of your conversations go unanalyzed. With our platform, you'd get structured analytics on all 2,000 — sentiment trends, recurring issues, risk signals, resolution patterns. Things that are impossible to see in a 5% sample.
+User: I get the value proposition, but we're a startup. Every dollar counts. We're already paying for Intercom, Slack, and a bunch of other tools. What's this going to cost us?
+Agent: Completely understand the budget pressure. Our Pro plan is $49/month for up to 5,000 conversations. That's about $0.01 per conversation analyzed. Compare that to the cost of a team lead spending hours manually reviewing a fraction of them.
+User: $49 isn't bad, but I've been burned before by tools that promise AI magic and deliver mediocre results. How accurate is the analysis really?
+Agent: Honest answer — it depends on the conversation quality and schema configuration. For clear support conversations, we see 85-90% accuracy on sentiment and categorization. I'd recommend running a pilot with 100 of your real conversations so you can judge the quality yourself.
+User: That's actually a reasonable approach. But we're also looking at Gong for conversation intelligence. How do you compare?
+Agent: Gong is excellent for sales call recording and analysis — that's their sweet spot. We're focused specifically on text-based AI agent conversations. If your 2,000 weekly conversations are with AI agents or chatbots, we're purpose-built for that use case. Gong would be better if you're analyzing human sales calls. Different tools for different problems.
+User: Fair point. Most of ours are AI chatbot conversations. Okay, I'm cautiously interested. What would a pilot look like?
+Agent: I'll set up a free trial where you can analyze 100 conversations. No credit card needed. You pick the conversations, we run them through the support schema, and you evaluate the output quality. If you're not impressed, no hard feelings. Deal?
+User: Deal. Let me talk to my CTO first, but I think we'll go ahead with the pilot next week.

@@ -1,0 +1,165 @@
+metadata:
+  name: coaching
+  version: "1.0"
+  description: "Coaching/therapeutic schema — extends universal with 8 coaching-specific fields for emotional and behavioral analysis"
+  inherits: universal
+
+fields:
+  - name: emotional_valence
+    type: keyword
+    required: true
+    description: "Predominant emotional valence of the user during the session"
+    allowed_values:
+      - very_positive
+      - positive
+      - neutral
+      - negative
+      - very_negative
+    prompt_hint: |
+      Valencia emocional predominante del usuario durante la sesión.
+      Considerar el arco emocional completo de la conversación.
+      Si inicia negativo y termina positivo, clasificar según el estado dominante o el más reciente si hay cambio claro.
+      Very_positive = entusiasmo, gratitud, alivio intenso.
+      Positive = bienestar general, esperanza, progreso.
+      Neutral = informativo, sin carga emocional evidente.
+      Negative = tristeza, frustración, preocupación.
+      Very_negative = desesperación, angustia intensa, crisis.
+      Evaluar el estado emocional del usuario, no del agente.
+
+  - name: emotional_intensity
+    type: keyword
+    required: true
+    description: "Intensity with which the user expresses their emotions"
+    allowed_values:
+      - minimal
+      - low
+      - moderate
+      - high
+      - extreme
+    prompt_hint: |
+      Intensidad con la que el usuario expresa sus emociones.
+      Evaluar la expresión emocional, no la gravedad objetiva del tema.
+      Minimal = menciona emociones de pasada, sin carga aparente.
+      Low = alguna carga emocional pero contenida.
+      Moderate = emociones claramente presentes y expresadas.
+      High = expresión emocional marcada, afecta el relato.
+      Extreme = expresiones muy intensas, llanto reportado, angustia evidente, crisis.
+
+  - name: progress_indicators
+    type: string_array
+    required: false
+    description: "Concrete signs of therapeutic or personal development progress mentioned by the user"
+    prompt_hint: |
+      Señales concretas de progreso terapéutico o de desarrollo personal mencionadas por el usuario.
+      Deben ser ejemplos específicos que el usuario reporta, no interpretaciones del agente.
+      Ejemplos: "Pude hablar con mi jefe sin ansiedad", "Dormí toda la noche sin interrupciones",
+      "Esta semana no evité la conversación difícil".
+      Solo incluir indicadores explícitos reportados por el usuario, no inferidos.
+      Lista vacía si no hay progreso concreto mencionado.
+
+  - name: behavioral_patterns
+    type: keyword_array
+    required: true
+    description: "Behavioral patterns observed in the user's discourse"
+    allowed_values:
+      - avoidance
+      - engagement
+      - resistance
+      - openness
+      - rumination
+      - catastrophizing
+      - self_blame
+      - growth_mindset
+      - help_seeking
+      - isolation
+    prompt_hint: |
+      Patrones de comportamiento observados en el discurso del usuario.
+      Puede incluir múltiples patrones simultáneos.
+      Avoidance = evita temas, situaciones o acciones específicas.
+      Engagement = participa activamente, muestra interés genuino.
+      Resistance = rechaza sugerencias o minimiza el problema.
+      Openness = receptivo a nuevas perspectivas o intervenciones.
+      Rumination = repite las mismas preocupaciones sin avanzar.
+      Catastrophizing = magnifica consecuencias negativas.
+      Self_blame = se atribuye la culpa de manera desproporcionada.
+      Growth_mindset = muestra disposición al cambio y aprendizaje.
+      Help_seeking = pide activamente apoyo o herramientas.
+      Isolation = menciona retiro social o evitación de contacto.
+      Basarse en evidencia textual clara.
+
+  - name: growth_markers
+    type: string_array
+    required: false
+    description: "Personal growth indicators or new insights expressed by the user"
+    prompt_hint: |
+      Indicadores de crecimiento personal o insights nuevos expresados por el usuario.
+      Deben ser reflexiones genuinas del usuario, no reformulaciones del agente.
+      Ejemplos: "Me di cuenta de que estaba proyectando en él mis miedos",
+      "Entendí que no puedo controlar las reacciones de los demás",
+      "Nunca había pensado que eso podría ser ansiedad".
+      Solo cuando el usuario articula una comprensión nueva, no simplemente responde "sí" al agente.
+      Lista vacía si no hay insights genuinos del usuario.
+
+  - name: therapeutic_momentum
+    type: keyword
+    required: true
+    description: "Therapeutic momentum of the session"
+    allowed_values:
+      - accelerating
+      - steady
+      - stalled
+      - regressing
+    prompt_hint: |
+      Momentum terapéutico observado en el arco de la sesión.
+      Accelerating = avances claros, nuevos insights, cambios de perspectiva evidentes.
+      Steady = manteniendo progreso establecido, sin grandes cambios pero estable.
+      Stalled = estancamiento, repetición de patrones, sin avance observable.
+      Regressing = retroceso visible en comportamiento, bienestar o apertura respecto a sesiones anteriores.
+      Evaluar el movimiento durante esta sesión específica.
+
+  - name: adaptation_level
+    type: keyword
+    required: true
+    description: "User's level of adaptation to their current circumstances"
+    allowed_values:
+      - thriving
+      - coping
+      - struggling
+      - crisis
+    prompt_hint: |
+      Nivel de adaptación del usuario a sus circunstancias actuales.
+      Thriving = funcionando bien, creciendo, disfrutando la vida.
+      Coping = manejándose pero con esfuerzo notable, equilibrio frágil.
+      Struggling = dificultad evidente para funcionar, impacto en áreas de vida.
+      Crisis = necesita intervención inmediata, riesgo de descompensación o daño.
+      Evaluar el funcionamiento global, no solo el estado emocional momentáneo.
+
+  - name: coping_strategies
+    type: keyword_array
+    required: true
+    description: "Coping strategies the user reports using or that are evidenced in their discourse"
+    allowed_values:
+      - problem_solving
+      - emotional_regulation
+      - social_support
+      - cognitive_reframing
+      - avoidance
+      - distraction
+      - substance_use
+      - physical_activity
+      - mindfulness
+      - creative_expression
+    prompt_hint: |
+      Estrategias de afrontamiento que el usuario reporta utilizar o que se evidencian en su discurso.
+      Incluir tanto adaptativas como desadaptativas — el objetivo es descripción, no juicio.
+      Problem_solving = toma pasos activos para resolver el problema.
+      Emotional_regulation = técnicas para manejar emociones (respiración, pausa).
+      Social_support = busca apoyo en personas de confianza.
+      Cognitive_reframing = cambia la perspectiva sobre el problema.
+      Avoidance = evita situaciones o pensamientos difíciles.
+      Distraction = se ocupa en otra cosa para no pensar.
+      Substance_use = menciona alcohol, drogas u otras sustancias como manera de manejar.
+      Physical_activity = ejercicio u actividad física como regulación.
+      Mindfulness = meditación, atención plena, técnicas de presencia.
+      Creative_expression = escritura, arte, música como outlet emocional.
+      Solo incluir las que tienen evidencia clara en la conversación.

@@ -256,3 +256,53 @@
 
 ### Siguiente acción
 - IF-007: Schemas verticales + Dogfooding (Paso 2.3)
+
+---
+## 2026-03-14 — Sesión 7: IF-007 Schemas Verticales + Dogfooding
+
+**Tipo:** Fabricación
+**IF:** IF-007
+**Ejecutor:** Claude Code
+**Paso Blueprint:** Fase 2, Paso 2.3
+
+### Cambios ejecutados
+1. **Schemas verticales completos**
+   - sales.yaml: hereda universal + 6 campos (buying_stage, objections, budget_signals, decision_urgency, competitive_mentions, next_best_action) = 16 total
+   - coaching.yaml: hereda universal + 8 campos (emotional_valence, emotional_intensity, progress_indicators, behavioral_patterns, growth_markers, therapeutic_momentum, adaptation_level, coping_strategies) = 18 total
+
+2. **8 conversaciones de ejemplo**
+   - universal_greeting.txt, universal_technical.txt
+   - support_billing.txt, support_cancellation.txt
+   - sales_demo.txt, sales_objection.txt
+   - coaching_progress.txt, coaching_crisis.txt
+
+3. **Script dogfood.py**
+   - 14 análisis: 8 directos + 6 cross-schema (conv + universal)
+   - Quality checks por schema
+   - Manejo graceful si API key no está configurada
+   - Reporte JSON en examples/results/
+
+4. **Tests multi-vertical (12 tests)**
+   - Carga de 4 schemas, field counts, herencia
+   - Campos específicos sales y coaching
+   - Prompt builder multi-vertical
+   - CLI schemas list/show
+
+### Archivos creados
+- src/analyxa/schemas/sales.yaml
+- src/analyxa/schemas/coaching.yaml
+- examples/conversations/ (8 archivos)
+- scripts/dogfood.py
+- tests/test_multi_vertical.py
+- examples/results/ (directorio)
+
+### Tests
+- 101 tests pasando (86 previos + 15 nuevos)
+
+### Git
+- commit: feat(IF-007): sales + coaching schemas + 8 examples + dogfooding + 12 tests
+
+### HITO: Fase 2 — CLI + Integraciones COMPLETA
+
+### Siguiente acción
+- IF-008: Fase 3 — Open Source Launch (README, PyPI, docs, LICENSE)

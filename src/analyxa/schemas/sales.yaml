@@ -1,0 +1,100 @@
+metadata:
+  name: sales
+  version: "1.0"
+  description: "Sales conversation schema — extends universal with 6 sales-specific fields"
+  inherits: universal
+
+fields:
+  - name: buying_stage
+    type: keyword
+    required: true
+    description: "Stage of the buying process where the prospect currently stands"
+    allowed_values:
+      - awareness
+      - consideration
+      - decision
+      - negotiation
+      - closed_won
+      - closed_lost
+    prompt_hint: |
+      Etapa del proceso de compra en la que se encuentra el prospecto.
+      Awareness = recién descubriendo el producto o problema.
+      Consideration = evaluando opciones, comparando.
+      Decision = listo para comprar, evaluando propuesta específica.
+      Negotiation = discutiendo términos, precio, contrato.
+      Closed_won = compra confirmada, acuerdo alcanzado.
+      Closed_lost = decidió no comprar o ir con competidor.
+      Inferir de las señales de la conversación, no solo de declaraciones explícitas.
+
+  - name: objections
+    type: string_array
+    required: false
+    description: "Objections or concerns expressed by the prospect"
+    prompt_hint: |
+      Objeciones o preocupaciones expresadas por el prospecto.
+      Cada objeción debe ser específica y accionable.
+      Ejemplos: "El precio es muy alto para nuestro presupuesto Q1",
+      "No tenemos recursos para implementar ahora", "Ya tenemos un contrato con otro proveedor".
+      Lista vacía si no hay objeciones explícitas.
+
+  - name: budget_signals
+    type: keyword_array
+    required: true
+    description: "Signals about the prospect's budget situation"
+    allowed_values:
+      - has_budget
+      - no_budget
+      - budget_unclear
+      - price_sensitive
+      - comparing_options
+    prompt_hint: |
+      Señales sobre la situación presupuestaria del prospecto.
+      Puede tener múltiples señales simultáneas (ej: has_budget + comparing_options).
+      Has_budget = menciona monto disponible o aprobación.
+      No_budget = dice explícitamente que no tiene presupuesto.
+      Budget_unclear = no da información sobre presupuesto.
+      Price_sensitive = menciona precio como preocupación principal.
+      Comparing_options = está evaluando múltiples proveedores.
+      Solo incluir señales con evidencia clara en la conversación.
+
+  - name: decision_urgency
+    type: keyword
+    required: true
+    description: "Urgency to make the purchase decision"
+    allowed_values:
+      - immediate
+      - short_term
+      - medium_term
+      - long_term
+      - no_urgency
+    prompt_hint: |
+      Urgencia para tomar la decisión de compra.
+      Immediate = quiere resolver hoy o esta semana.
+      Short_term = días o semana, hay deadline próximo.
+      Medium_term = semanas, tiene fecha en mente.
+      Long_term = meses, planificación futura.
+      No_urgency = no expresa presión de tiempo.
+      Inferir del tono y las fechas o plazos mencionados.
+
+  - name: competitive_mentions
+    type: keyword_array
+    required: false
+    description: "Names of competitors or alternatives mentioned explicitly by the prospect"
+    prompt_hint: |
+      Nombres de competidores o alternativas mencionadas explícitamente por el prospecto.
+      Solo incluir menciones directas por nombre (ej: "Salesforce", "HubSpot", "Gong").
+      No inferir competidores que no se mencionan.
+      Incluir también "in-house" o "build internally" si el prospecto menciona construirlo propio.
+      Lista vacía si no se mencionan competidores ni alternativas.
+
+  - name: next_best_action
+    type: string
+    required: true
+    description: "The most important and specific action the sales team should take next"
+    prompt_hint: |
+      La acción más importante y específica que el equipo de ventas debería tomar como siguiente paso.
+      Debe ser concreta y accionable.
+      Buenos ejemplos: "Enviar propuesta con descuento del 15% antes del viernes",
+      "Agendar demo técnica con el CTO esta semana",
+      "Enviar caso de estudio de cliente similar en tamaño".
+      Evitar recomendaciones vagas como "hacer seguimiento" o "continuar conversación".

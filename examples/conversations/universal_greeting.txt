@@ -1,0 +1,10 @@
+User: Hi there, I'm looking for information about your platform.
+Agent: Welcome! I'd be happy to help you learn about our platform. What specifically would you like to know?
+User: What kind of analytics do you offer?
+Agent: We offer multi-dimensional conversation analytics powered by AI. We can extract sentiment, topics, risk signals, and more from any conversation. Would you like to see a demo?
+User: That sounds interesting. Can you send me some documentation?
+Agent: Absolutely! I'll send you our quickstart guide and API documentation. What email should I send it to?
+User: Send it to john@example.com please.
+Agent: Done! I've sent the documentation to john@example.com. Is there anything else you'd like to know?
+User: No, that's all for now. Thanks!
+Agent: Great, feel free to reach out anytime. Have a wonderful day!

@@ -1,7 +1,7 @@
 # ANALYXA — Estado del Proyecto
 
 > Fuente de verdad del estado actual. Se actualiza al final de cada IF.
-> Última actualización: 2026-03-14 — Sesión 6
+> Última actualización: 2026-03-14 — Sesión 7
 
 ---
 
@@ -9,11 +9,11 @@
 
 | Dimensión | Valor |
 |-----------|-------|
-| **Fase actual** | Fase 2 — CLI + Integraciones |
+| **Fase actual** | Fase 2 — CLI + Integraciones ✅ COMPLETA |
 | **Bloqueo activo** | Ninguno |
-| **Siguiente acción** | IF-007: Schemas verticales + Dogfooding (Paso 2.3) |
+| **Siguiente acción** | IF-008: Fase 3 — Open Source Launch (README, PyPI, docs) |
 | **Días transcurridos** | 3 (inicio: 2026-03-12) |
-| **Sesiones completadas** | 6 |
+| **Sesiones completadas** | 7 |
 
 ---
 
@@ -33,10 +33,10 @@
 - [x] LLM client (llm_client.py)
 - [x] Analyzer pipeline (analyzer.py + embeddings + sources + sinks)
 
-### Fase 2 — CLI + Integraciones
+### Fase 2 — CLI + Integraciones ✅
 - [x] CLI + config (cli.py, config.py, pyproject.toml)
 - [x] Redis source + Qdrant sink + batch
-- [ ] Schemas verticales (sales, coaching) + dogfooding
+- [x] Schemas verticales (sales.yaml, coaching.yaml) + 8 conversaciones ejemplo + dogfooding
 
 ### Fase 3 — Open Source Launch
 - [ ] Packaging (README, pyproject.toml, docs, LICENSE)
@@ -56,8 +56,8 @@
 | VPS 66.94.117.83 | OK | Contabo, Ubuntu 22.04, 8GB RAM |
 | Redis | OK | Docker, v7-alpine, localhost:6379 |
 | Qdrant | OK | Docker, latest, localhost:6333 |
-| Anthropic API | Pendiente | Key por configurar en .env |
-| OpenAI API | Pendiente | Key por configurar en .env |
+| Anthropic API | Pendiente | Key placeholder en .env — configurar para dogfooding real |
+| OpenAI API | Pendiente | Key placeholder en .env — configurar para embeddings |
 | anthropic SDK | OK | v0.84.0 instalado |
 | openai SDK | OK | v2.26.0 instalado |
 | click | OK | v8.x instalado |
@@ -71,6 +71,7 @@
 
 | Métrica | Actual | Target |
 |---------|--------|--------|
-| Tests pasando | 86 | — |
-| IFs ejecutadas | 6 | — |
-| Schemas implementados | 2 | 4 |
+| Tests pasando | 98 | — |
+| IFs ejecutadas | 7 | — |
+| Schemas implementados | 4 | 4 |
+| Conversaciones ejemplo | 8 | 8 |

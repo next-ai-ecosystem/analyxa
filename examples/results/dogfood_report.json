@@ -1,0 +1,5 @@
+{
+    "status": "pending",
+    "message": "API keys not configured. Set ANTHROPIC_API_KEY in .env and re-run scripts/dogfood.py",
+    "planned_analyses": 14
+}

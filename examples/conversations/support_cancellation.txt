@@ -1,0 +1,11 @@
+User: I want to cancel my subscription immediately.
+Agent: I understand you'd like to cancel. Before I process that, may I ask what prompted this decision? We'd love the chance to address any concerns.
+User: The product doesn't do what I need. I've been paying for 3 months and the reporting feature still doesn't support CSV exports. You promised it in the roadmap.
+Agent: I hear you, and that's valid feedback. CSV export is actually scheduled for our next release in two weeks. Would you be open to trying it before making a final decision?
+User: I've heard "two weeks" before. I need CSV exports for my weekly reports to management and I've been manually copying data every week. It's costing me hours.
+Agent: That does sound extremely time-consuming. I have two things I can offer: First, I can give you a 50% discount for the next 2 months while we deliver the CSV feature. Second, I can show you a workaround using our API that can generate CSV exports right now — it would take about 10 minutes to set up.
+User: The API workaround might work actually. Can you show me how?
+Agent: Of course! I'll send you a step-by-step guide right now. Basically, you call our /reports endpoint with format=csv and it returns a downloadable file. I'll include a sample script you can schedule to run weekly.
+User: Okay, let me try the workaround first. If the CSV feature really does ship in two weeks, I'll stay. But I want that 50% discount too.
+Agent: Deal! I've applied the 50% discount for the next 2 billing cycles. I'm sending the API guide to your email now. And I'll personally follow up with you when CSV exports launch. Is there anything else?
+User: No, that works. Thanks for actually trying to help instead of just canceling.

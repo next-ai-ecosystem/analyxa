@@ -1,0 +1,9 @@
+User: I'm getting an error when trying to connect to the API. Error code 401.
+Agent: A 401 error indicates an authentication issue. Let me help you troubleshoot. Are you using an API key in your request headers?
+User: Yes, I'm passing it in the Authorization header.
+Agent: Could you verify the key hasn't expired? You can check in your dashboard under Settings > API Keys.
+User: Oh wait, I see the issue. I was using the test key in production. Let me switch to the production key.
+Agent: That would definitely cause a 401! Test keys only work in the sandbox environment. Once you switch to your production key, it should work.
+User: Yes! That fixed it. Working perfectly now. Thanks for the quick help!
+Agent: Glad that resolved it! Remember to keep your production key secure and never commit it to version control. Anything else I can help with?
+User: Nope, all good. Appreciate the help.

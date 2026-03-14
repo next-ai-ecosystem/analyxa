@@ -79,11 +79,11 @@
 - [x] Tests de infraestructura
 
 ### Paso 2.3 — Schemas verticales + Dogfooding
-- [ ] Crear sales.yaml (10 + 6 campos)
-- [ ] Crear coaching.yaml (10 + 8 campos)
-- [ ] 8 conversaciones de ejemplo
-- [ ] Script dogfood.py (14 análisis)
-- [ ] Tests multi-vertical
+- [x] Crear sales.yaml (10 + 6 campos = 16 total)
+- [x] Crear coaching.yaml (10 + 8 campos = 18 total)
+- [x] 8 conversaciones de ejemplo
+- [x] Script dogfood.py (14 análisis, requiere API key real)
+- [x] Tests multi-vertical (12 tests)
 
 ---
 
