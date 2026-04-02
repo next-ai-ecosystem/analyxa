@@ -115,7 +115,7 @@ def test_cli_version():
     runner = CliRunner()
     result = runner.invoke(main, ["version"])
     assert result.exit_code == 0
-    assert "Analyxa v0.1.0" in result.output
+    assert "Analyxa v0.2.0" in result.output
     assert "Provider:" in result.output
     assert "Schema:" in result.output
 

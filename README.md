@@ -1,12 +1,13 @@
 # Analyxa
 
-**Multi-dimensional extraction engine for AI conversations.**
+**Multi-dimensional extraction engine for AI conversations — in any language.**
 
 Analyxa takes opaque conversations between users and AI agents and decomposes them into N configurable dimensions — sentiment, intensity, topics, risk signals, intent, entities, and more — stored as 1,536-dimensional semantic vectors.
 
 [![PyPI version](https://badge.fury.io/py/analyxa.svg)](https://pypi.org/project/analyxa/)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![Multi-Language](https://img.shields.io/badge/languages-20%2B-blue)](https://github.com/next-ai-ecosystem/analyxa#multi-language-support)
 
 ---
 
@@ -18,10 +19,34 @@ Conversation → Analyxa → Structured JSON (N fields) + Semantic Vector (1536D
 
 One conversation in, structured intelligence out:
 
-- **10 universal fields** extracted from any conversation (sentiment, topics, risk signals, intent, entities, action items...)
-- **Vertical schemas** add domain-specific fields: support (16), sales (16), coaching (18)
+- **11 universal fields** extracted from any conversation (language, sentiment, topics, risk signals, intent, entities, action items...)
+- **Vertical schemas** add domain-specific fields: support (17), sales (17), coaching (19)
 - **Semantic vectors** enable similarity search across thousands of conversations
 - **Pipeline ready**: Redis queue → Analyxa → Qdrant vector DB
+
+## Multi-Language Support
+
+Analyxa automatically detects the conversation language and generates extracted values in that language. No configuration needed.
+
+```python
+from analyxa import analyze
+
+# Spanish conversation
+result = analyze("Cliente: Tengo un problema con mi factura...", schema="support")
+result.fields["language"]   # "es"
+result.fields["sentiment"]  # "negativo"
+result.fields["summary"]    # "El cliente reporta un problema..."
+
+# French conversation
+result = analyze("Client: J'ai un problème avec ma facture...", schema="support")
+result.fields["language"]   # "fr"
+result.fields["sentiment"]  # "négatif"
+```
+
+- **Field keys** always in English (`sentiment`, not `sentimiento`)
+- **Field values** in the detected language
+- Works with any language supported by your LLM provider
+- Backward compatible: English conversations return the same results plus `language: "en"`
 
 ## Quick Start
 
@@ -82,15 +107,16 @@ Analyxa uses YAML schemas to define what to extract. Schemas are hierarchical �
 
 | Schema | Fields | Description |
 |--------|--------|-------------|
-| **universal** | 10 | Base fields for any conversation |
-| **support** | 16 | Customer support (+satisfaction, issue category, effort score...) |
-| **sales** | 16 | Sales conversations (+buying stage, objections, budget signals...) |
-| **coaching** | 18 | Coaching/therapeutic (+emotional valence, behavioral patterns, coping strategies...) |
+| **universal** | 11 | Base fields for any conversation |
+| **support** | 17 | Customer support (+satisfaction, issue category, effort score...) |
+| **sales** | 17 | Sales conversations (+buying stage, objections, budget signals...) |
+| **coaching** | 19 | Coaching/therapeutic (+emotional valence, behavioral patterns, coping strategies...) |
 
 ### Universal Fields (included in all schemas)
 
 | Field | Type | Description |
 |-------|------|-------------|
+| language | string | ISO 639-1 code of the conversation language |
 | title | string | Descriptive session name |
 | summary | string | 3-5 sentence summary (vectorized for search) |
 | sentiment | keyword | User sentiment: positive, negative, mixed, neutral |

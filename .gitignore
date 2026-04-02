@@ -1,11 +1,48 @@
-.env
-.venv/
+# Python
 __pycache__/
 *.pyc
-.pytest_cache/
+*.pyo
 *.egg-info/
 dist/
 build/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+.pytest_cache/
+htmlcov/
+.coverage
+.tox/
+
+# Internal development (NEVER commit these)
+memory/
+scripts/dogfood.py
+docs/IF-*.md
+docs/INSTRUCCION-*.md
+docs/fiverr-gig.md
+CLAUDE.md
 .memoria.json
 .memoria-sessions.json
-node_modules/
+
+# Build artifacts
+*.whl
