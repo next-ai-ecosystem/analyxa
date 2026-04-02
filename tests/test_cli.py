@@ -66,8 +66,8 @@ def test_cli_schemas_list():
     assert result.exit_code == 0
     assert "universal" in result.output
     assert "support" in result.output
-    assert "Fields: 10" in result.output
-    assert "Fields: 16" in result.output
+    assert "Fields: 11" in result.output
+    assert "Fields: 17" in result.output
 
 
 # ---------------------------------------------------------------------------
@@ -80,7 +80,7 @@ def test_cli_schemas_show_universal():
     assert result.exit_code == 0
     assert "title" in result.output
     assert "sentiment" in result.output
-    assert "Fields (10)" in result.output
+    assert "Fields (11)" in result.output
 
 
 # ---------------------------------------------------------------------------
@@ -92,7 +92,7 @@ def test_cli_schemas_show_support():
     result = runner.invoke(main, ["schemas", "show", "support"])
     assert result.exit_code == 0
     assert "satisfaction_prediction" in result.output
-    assert "Fields (16)" in result.output
+    assert "Fields (17)" in result.output
     assert "Inherits: universal" in result.output
 
 

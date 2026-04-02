@@ -1,0 +1,4 @@
+Client: Bonjour, je suis intéressé par votre plan entreprise. Combien ça coûte?
+Agent: Bonjour! Notre plan entreprise est à 199€/mois. Il inclut un nombre illimité d'analyses et un support prioritaire.
+Client: C'est un peu cher. Vous avez une offre pour les startups?
+Agent: Absolument! Nous offrons 30% de réduction pour les startups de moins de 2 ans. Ça reviendrait à 139€/mois.

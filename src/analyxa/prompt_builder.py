@@ -43,18 +43,33 @@ def build_prompt(schema: dict, conversation: str, context: dict | None = None) -
         if context_str:
             system_sections.append(context_str)
 
-    # Section 3 — Field definitions
+    # Section 3 — Multi-language instructions
+    system_sections.append(
+        "LANGUAGE INSTRUCTIONS (CRITICAL — follow exactly):\n"
+        '1. Detect the primary language of the conversation text.\n'
+        '2. Set the "language" field to the ISO 639-1 code (e.g., "es", "en", "fr", "pt", "de", "it", "ja", "zh").\n'
+        '3. Generate ALL string and array field VALUES in the detected language. '
+        'For example, if the conversation is in Spanish, the "summary" value must be in Spanish, '
+        '"topics" values must be in Spanish, etc.\n'
+        '4. Field NAMES (JSON keys) must ALWAYS remain in English — never translate them. '
+        'Use "sentiment", not "sentimiento".\n'
+        '5. Boolean and numeric values are language-independent — do not translate them.\n'
+        '6. For mixed-language conversations, use the dominant language (the one used most).\n'
+        '7. If the language cannot be determined, set language to "und".'
+    )
+
+    # Section 4 — Field definitions
     field_lines = ["You must extract the following fields:\n"]
     for i, field in enumerate(fields, start=1):
         field_lines.append(_format_field_definition(i, field))
     system_sections.append("\n".join(field_lines))
 
-    # Section 4 — Output format
+    # Section 5 — Output format
     system_sections.append(
         prompt_cfg.get("output_format", _DEFAULT_OUTPUT_FORMAT).strip()
     )
 
-    # Section 5 — Analysis guidelines
+    # Section 6 — Analysis guidelines
     guidelines = prompt_cfg.get("analysis_guidelines")
     if guidelines:
         lines = ["Analysis guidelines:"]
@@ -62,7 +77,7 @@ def build_prompt(schema: dict, conversation: str, context: dict | None = None) -
             lines.append(f"- {g}")
         system_sections.append("\n".join(lines))
 
-    # Section 6 — JSON template
+    # Section 7 — JSON template
     template = _generate_json_template(fields)
     system_sections.append(f"Your response must follow this exact JSON structure:\n{template}")
 

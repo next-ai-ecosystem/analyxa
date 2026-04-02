@@ -22,8 +22,8 @@ def test_load_universal_schema(schema_manager):
     assert schema["metadata"]["inherits"] is None
 
     fields = schema["fields"]
-    assert len(fields) == 10
-    assert fields[0]["name"] == "title"
+    assert len(fields) == 11
+    assert fields[0]["name"] == "language"
     assert fields[-1]["name"] == "action_items"
 
 
@@ -31,18 +31,18 @@ def test_load_support_schema_with_inheritance(schema_manager):
     schema = schema_manager.load_schema("support")
 
     fields = schema["fields"]
-    assert len(fields) == 16
+    assert len(fields) == 17
 
-    # First 10 fields from universal, in order
+    # First 11 fields from universal, in order
     universal_names = [
-        "title", "summary", "sentiment", "sentiment_intensity", "topics",
+        "language", "title", "summary", "sentiment", "sentiment_intensity", "topics",
         "session_outcome", "user_intent", "risk_signals", "key_entities", "action_items",
     ]
     for i, name in enumerate(universal_names):
         assert fields[i]["name"] == name, f"Field {i} should be '{name}', got '{fields[i]['name']}'"
 
-    assert fields[10]["name"] == "satisfaction_prediction"
-    assert fields[15]["name"] == "customer_effort_score"
+    assert fields[11]["name"] == "satisfaction_prediction"
+    assert fields[16]["name"] == "customer_effort_score"
 
     # Inherited auto_fields and prompt from universal
     assert "auto_fields" in schema
@@ -66,17 +66,18 @@ def test_list_schemas(schema_manager):
 
 def test_get_field_names(schema_manager):
     universal_names = schema_manager.get_field_names("universal")
-    assert len(universal_names) == 10
-    assert universal_names[0] == "title"
+    assert len(universal_names) == 11
+    assert universal_names[0] == "language"
     assert universal_names[-1] == "action_items"
 
     support_names = schema_manager.get_field_names("support")
-    assert len(support_names) == 16
-    assert support_names[10] == "satisfaction_prediction"
+    assert len(support_names) == 17
+    assert support_names[11] == "satisfaction_prediction"
 
 
 def test_validate_result_valid(schema_manager):
     result = {
+        "language": "en",
         "title": "User requests refund for duplicate charge",
         "summary": "The user contacted support about a duplicate charge on their account. "
                    "The agent reviewed the billing history and confirmed the error. "
@@ -94,6 +95,7 @@ def test_validate_result_valid(schema_manager):
 
 def test_validate_result_missing_required(schema_manager):
     result = {
+        "language": "en",
         "title": "User requests refund",
         "summary": "A refund was processed successfully.",
         "sentiment_intensity": "low",
@@ -109,6 +111,7 @@ def test_validate_result_missing_required(schema_manager):
 
 def test_validate_result_invalid_keyword(schema_manager):
     result = {
+        "language": "en",
         "title": "Test session",
         "summary": "Test summary covering the conversation.",
         "sentiment": "invalid_value",

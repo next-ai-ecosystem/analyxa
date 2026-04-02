@@ -1,0 +1,4 @@
+Kunde: Guten Tag, ich habe ein Problem mit meiner Rechnung. Es wurde doppelt abgebucht.
+Agent: Guten Tag! Das tut mir leid. Ich schaue mir Ihr Konto sofort an.
+Kunde: Meine Kundennummer ist DE-4521. Die doppelte Abbuchung war am 15. März.
+Agent: Ich sehe die doppelte Buchung. Ich veranlasse sofort eine Rückerstattung. Sie sollte innerhalb von 3-5 Werktagen auf Ihrem Konto erscheinen.

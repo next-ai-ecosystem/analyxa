@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-Analyxa Dogfooding Script — IF-007
-Executes 14 analyses across 4 schemas to validate the full pipeline.
+Analyxa Dogfooding Script — IF-007 + IF-010 (multi-idioma)
+Executes 18 analyses across 4 schemas to validate the full pipeline.
 
 Usage:
-    cd /opt/analyxa && source .venv/bin/activate
+    cd /opt/analyxa && source venv/bin/activate
     PYTHONPATH=src python3 scripts/dogfood.py
 
 Results saved to: examples/results/
@@ -117,6 +117,35 @@ ANALYSES = [
         "file": "coaching_crisis.txt",
         "schema": "universal",
     },
+    # --- Multi-language analyses (IF-010) ---
+    {
+        "id": "A15",
+        "label": "Support billing ES — schema support",
+        "file": "support_billing_es.txt",
+        "schema": "support",
+        "expected_language": "es",
+    },
+    {
+        "id": "A16",
+        "label": "Sales inquiry FR — schema sales",
+        "file": "sales_inquiry_fr.txt",
+        "schema": "sales",
+        "expected_language": "fr",
+    },
+    {
+        "id": "A17",
+        "label": "Coaching progress PT — schema coaching",
+        "file": "coaching_progress_pt.txt",
+        "schema": "coaching",
+        "expected_language": "pt",
+    },
+    {
+        "id": "A18",
+        "label": "Support billing DE — schema support",
+        "file": "support_billing_de.txt",
+        "schema": "support",
+        "expected_language": "de",
+    },
 ]
 
 
@@ -130,6 +159,11 @@ def load_conversation(filename: str) -> str:
 def check_quality(result_dict: dict, schema_name: str) -> list[str]:
     """Basic quality checks on extracted fields."""
     issues = []
+
+    # Language field — always required (IF-010)
+    lang = result_dict.get("language")
+    if not lang or not isinstance(lang, str) or len(lang) < 2:
+        issues.append(f"language field missing or invalid: {lang!r}")
 
     # Universal fields — always required
     if not result_dict.get("title"):
@@ -245,9 +279,26 @@ def main():
                 passed += 1
                 # Print key fields
                 f = result["fields"]
+                print(f"       language: {f.get('language', 'N/A')}")
                 print(f"       title: {f.get('title', 'N/A')!r}")
                 print(f"       sentiment: {f.get('sentiment')} / {f.get('sentiment_intensity')}")
                 print(f"       outcome: {f.get('session_outcome')}")
+
+                # Verify expected language (IF-010)
+                expected_lang = entry.get("expected_language")
+                if expected_lang:
+                    actual_lang = f.get("language")
+                    if actual_lang != expected_lang:
+                        result["quality_issues"].append(
+                            f"expected language '{expected_lang}', got '{actual_lang}'"
+                        )
+                        result["quality_ok"] = False
+                elif f.get("language") and f.get("language") != "en":
+                    # Original 14 English conversations should detect as "en"
+                    result["quality_issues"].append(
+                        f"expected language 'en' for English conv, got '{f.get('language')}'"
+                    )
+                    result["quality_ok"] = False
                 schema = entry["schema"]
                 if schema == "coaching":
                     print(f"       emotional_valence: {f.get('emotional_valence')}")

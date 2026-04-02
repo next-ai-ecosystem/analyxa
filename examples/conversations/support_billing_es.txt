@@ -1,0 +1,4 @@
+Cliente: Hola, compré una suscripción premium hace 2 días y aún no tengo acceso.
+Agente: ¡Hola! Lamento el inconveniente. Déjame revisar tu cuenta ahora mismo.
+Cliente: Mi correo es javier@ejemplo.com. El pago ya se reflejó en mi banco.
+Agente: Confirmado, veo el pago procesado. Hubo un error en la activación automática. Ya habilité tu acceso premium, debería estar activo en los próximos 5 minutos.

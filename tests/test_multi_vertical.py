@@ -23,9 +23,9 @@ def sm():
 
 def test_sales_schema_loads(sm):
     schema = sm.load_schema("sales")
-    assert len(schema["fields"]) == 16
-    assert schema["fields"][10]["name"] == "buying_stage"
-    assert schema["fields"][15]["name"] == "next_best_action"
+    assert len(schema["fields"]) == 17
+    assert schema["fields"][11]["name"] == "buying_stage"
+    assert schema["fields"][16]["name"] == "next_best_action"
     assert schema["metadata"]["inherits"] == "universal"
 
 
@@ -35,9 +35,9 @@ def test_sales_schema_loads(sm):
 
 def test_coaching_schema_loads(sm):
     schema = sm.load_schema("coaching")
-    assert len(schema["fields"]) == 18
-    assert schema["fields"][10]["name"] == "emotional_valence"
-    assert schema["fields"][17]["name"] == "coping_strategies"
+    assert len(schema["fields"]) == 19
+    assert schema["fields"][11]["name"] == "emotional_valence"
+    assert schema["fields"][18]["name"] == "coping_strategies"
     assert schema["metadata"]["inherits"] == "universal"
 
 
@@ -58,7 +58,7 @@ def test_all_schemas_list(sm):
 def test_sales_inherits_universal_fields(sm):
     universal = sm.load_schema("universal")
     sales = sm.load_schema("sales")
-    for i in range(10):
+    for i in range(11):
         assert sales["fields"][i]["name"] == universal["fields"][i]["name"]
         assert sales["fields"][i]["type"] == universal["fields"][i]["type"]
 
@@ -70,7 +70,7 @@ def test_sales_inherits_universal_fields(sm):
 def test_coaching_inherits_universal_fields(sm):
     universal = sm.load_schema("universal")
     coaching = sm.load_schema("coaching")
-    for i in range(10):
+    for i in range(11):
         assert coaching["fields"][i]["name"] == universal["fields"][i]["name"]
         assert coaching["fields"][i]["type"] == universal["fields"][i]["type"]
 
@@ -81,6 +81,7 @@ def test_coaching_inherits_universal_fields(sm):
 
 def test_validate_sales_result(sm):
     result = {
+        "language": "en",
         "title": "Sales demo request",
         "summary": "Prospect interested in analytics platform after conference.",
         "sentiment": "positive",
@@ -109,6 +110,7 @@ def test_validate_sales_result(sm):
 
 def test_validate_coaching_result(sm):
     result = {
+        "language": "en",
         "title": "Progress session — thesis anxiety",
         "summary": "User reports improved sleep and reduced anxiety.",
         "sentiment": "positive",
@@ -139,6 +141,7 @@ def test_validate_coaching_result(sm):
 
 def test_validate_sales_missing_buying_stage(sm):
     result = {
+        "language": "en",
         "title": "Sales conversation",
         "summary": "A sales conversation.",
         "sentiment": "neutral",
@@ -167,6 +170,7 @@ def test_validate_sales_missing_buying_stage(sm):
 
 def test_validate_coaching_invalid_momentum(sm):
     result = {
+        "language": "en",
         "title": "Coaching session",
         "summary": "A coaching session.",
         "sentiment": "neutral",

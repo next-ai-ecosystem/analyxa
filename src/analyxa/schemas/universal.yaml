@@ -5,6 +5,17 @@ metadata:
   inherits: null
 
 fields:
+  - name: language
+    type: string
+    required: true
+    description: "ISO 639-1 language code of the conversation (e.g., 'es', 'en', 'fr', 'pt', 'de'). Detect automatically from the conversation text. Use the dominant language if the conversation mixes languages. If unable to determine, use 'und'."
+    prompt_hint: >
+      Detect the primary language of the conversation text and return its ISO 639-1 code.
+      Examples: 'en' for English, 'es' for Spanish, 'fr' for French, 'pt' for Portuguese,
+      'de' for German, 'it' for Italian, 'ja' for Japanese, 'zh' for Chinese.
+      For mixed-language conversations, use the dominant language. If undetermined, use 'und'.
+    allowed_values: null
+
   - name: title
     type: string
     required: true

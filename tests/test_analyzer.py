@@ -37,6 +37,7 @@ def sample_conversation():
 @pytest.fixture
 def mock_llm_response():
     fields = {
+        "language": "en",
         "title": "Duplicate Subscription Charge Resolution",
         "summary": "Customer reported being charged twice for their monthly subscription. "
                    "Agent identified the duplicate charge and processed an immediate refund "
@@ -146,7 +147,7 @@ def test_analyzer_full_pipeline(sample_conversation, mock_llm_response, mock_emb
 
     result = analyzer.analyze(sample_conversation)
 
-    assert len(result.fields) == 10
+    assert len(result.fields) == 11
     assert result.schema_name == "universal"
     # ISO 8601 check
     datetime.fromisoformat(result.analyzed_at)
@@ -346,6 +347,7 @@ def test_embedding_generator_no_api_key():
 
 def test_analyzer_support_schema(sample_conversation, mock_llm_response):
     support_fields = dict(mock_llm_response.parsed_json)
+    support_fields.setdefault("language", "en")
     support_fields.update({
         "satisfaction_prediction": "medium",
         "issue_category": "billing",
